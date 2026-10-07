@@ -16,79 +16,92 @@
   --------------------------------------------------------- */
   const I18N = {
     pt: {
-      "nav.services": "Serviços",
-      "nav.examples": "Exemplos",
-      "nav.process": "Como trabalhamos",
-      "nav.cta": "Contato",
-      "hero.kicker": "Software sob demanda e automação",
-      "hero.t1": "Menos planilha.",
-      "hero.t2": "Menos retrabalho.",
-      "hero.t3": "Destrave sua operação.",
-      "hero.about": "A lokp desenvolve sistemas sob medida e automações para empresas que cresceram mais rápido que as próprias ferramentas.",
-      "hero.cta": "Conversar sobre um projeto",
-      "hero.cta2": "Ver serviços",
-      "hero.note": "Atendimento em português e chinês.",
-      "sv.title": "O que fazemos",
-      "sv.lead": "Projetos pequenos ou grandes, sempre escritos para o seu processo, não adaptados de um pacote pronto.",
-      "sv.1t": "Software sob medida",
-      "sv.1d": "Sistemas internos, portais e aplicativos feitos para o jeito que a sua empresa trabalha.",
-      "sv.2t": "Automação de processos",
-      "sv.2d": "Robôs para o trabalho repetitivo: conferir, copiar, lançar, enviar. Rodando todo dia, no horário certo.",
-      "sv.3t": "Integrações",
-      "sv.3d": "ERP, CRM, e-commerce, banco e planilhas trocando dados sem ninguém no meio.",
-      "sv.4t": "IA aplicada",
-      "sv.4d": "Leitura de documentos, triagem de e-mails e atendimento, com revisão humana onde for necessário.",
-      "sv.5t": "Painéis e relatórios",
-      "sv.5d": "Os números que você já tem, organizados para decidir rápido.",
-      "sv.6t": "Suporte contínuo",
-      "sv.6d": "Manutenção, ajustes e melhorias depois da entrega. O sistema acompanha a empresa.",
+      "nav.services": "O que nois faz",
+      "nav.works": "Os corre",
+      "nav.examples": "Os B.O.",
+      "nav.process": "O esquema",
+      "nav.cta": "Chama nois",
+      "hero.kicker": "Software sob medida e automação, sem meme",
+      "hero.title": "Nois faz programa.",
+      "hero.about": "A lokp é a firma que monta sistema na medida e automação pra empresa que cresceu mais rápido que as próprias ferramenta. Papo reto.",
+      "hero.cta": "Trocar uma ideia",
+      "hero.cta2": "Ver os corre",
+      "hero.note": "Atendimento em português e chinês, tá ligado?",
+      "sv.title": "O que nois faz",
+      "sv.lead": "Corre pequeno ou grande, sempre feito pro seu esquema. Nada de pacote genérico de camelô.",
+      "sv.1t": "Sistema na medida",
+      "sv.1d": "Sistema interno, portal e aplicativo no jeito que a sua firma trabalha. Sem gambiarra.",
+      "sv.2t": "Automação dos corre",
+      "sv.2d": "Robô pro trampo chato: conferir, copiar, lançar, enviar. Todo dia, no horário, sem dar falta.",
+      "sv.3t": "Integração",
+      "sv.3d": "ERP, CRM, loja online, banco e planilha trocando ideia sozinhos, sem atravessador.",
+      "sv.4t": "IA na moral",
+      "sv.4d": "Lê documento, separa e-mail e atende cliente, com um parça humano conferindo quando precisa.",
+      "sv.5t": "Painel e relatório",
+      "sv.5d": "Os número que cê já tem, organizado pra decidir na hora.",
+      "sv.6t": "Fortalecimento contínuo",
+      "sv.6d": "Manutenção, ajuste e melhoria depois da entrega. Nois não some, não.",
       "ul.1t": "Antes",
-      "ul.1d": "Planilhas manuais, retrabalho, sistemas que não conversam e uma equipe presa em tarefas repetitivas.",
+      "ul.1d": "Planilha na mão, retrabalho, sistema que não se conversa e a rapaziada presa no corre repetitivo.",
       "ul.2t": "Durante",
-      "ul.2d": "Mapeamos cada etapa, cortamos o que não precisa existir e automatizamos o resto.",
+      "ul.2d": "Nois mapeia cada etapa, corta o que não precisa existir e automatiza o resto.",
       "ul.3t": "Depois",
-      "ul.3d": "O processo roda sozinho, os dados batem e a equipe volta a cuidar do negócio.",
-      "ex.title": "Problemas comuns",
-      "ex.lead": "Situações que aparecem em quase toda operação. Se alguma parece familiar, é por aí que a conversa começa.",
+      "ul.3d": "O processo roda sozinho, os dado bate e a equipe volta a cuidar do negócio.",
+      "wk.title": "Os corre",
+      "wk.lead": "Os programa que nois já fez. O resto tá no forno.",
+      "wk.1d": "Loja de automação comercial e informática: catálogo, carrinho e orçamento no WhatsApp. Entregue e rodando liso.",
+      "wk.visit": "Colar no site",
+      "wk.soon": "em breve se pá",
+      "wk.soonD": "Tá no forno. Pode ser o seu.",
+      "wk.soonCta": "Chama nois",
+      "ex.title": "Os B.O. de sempre",
+      "ex.lead": "Uns perrengue que aparece em toda firma. Se algum te pareceu familiar, é por aí que o papo começa.",
       "ex.before": "Hoje",
-      "ex.after": "Com automação",
-      "ex.1a": "Duas pessoas passam o fim do mês conferindo notas fiscais contra pedidos.",
-      "ex.1b": "Um robô cruza tudo diariamente e só aponta o que não bate.",
-      "ex.2a": "Pedidos do e-commerce digitados à mão no ERP.",
-      "ex.2b": "O pedido entra no ERP sozinho e o estoque se atualiza em todos os canais.",
-      "ex.3a": "Relatório semanal montado copiando dados de cinco planilhas.",
+      "ex.after": "Com nois",
+      "ex.1a": "Dois maluco passam o fim do mês conferindo nota fiscal contra pedido.",
+      "ex.1b": "Um robô cruza tudo todo dia e só dedura o que não bate.",
+      "ex.2a": "Pedido da loja online digitado na mão no ERP.",
+      "ex.2b": "O pedido cai no ERP sozinho e o estoque se acerta em todos os canal.",
+      "ex.3a": "Relatório da semana montado no Ctrl+C, Ctrl+V de cinco planilha.",
       "ex.3b": "Um painel sempre atualizado, sem copiar e colar.",
-      "ex.4a": "Clientes esperando resposta para as mesmas perguntas de sempre.",
-      "ex.4b": "O básico é respondido na hora; a equipe fica com os casos que exigem atenção.",
-      "pr.title": "Como trabalhamos",
-      "pr.1t": "Conversa",
-      "pr.1d": "Entendemos o processo como ele acontece hoje, não como está no manual.",
+      "ex.4a": "Cliente esperando resposta pras mesmas pergunta de sempre.",
+      "ex.4b": "O básico é respondido na hora; a equipe fica só com os caso que pede atenção.",
+      "pr.title": "Como funciona o esquema",
+      "pr.1t": "Trocar ideia",
+      "pr.1d": "Nois entende o processo do jeito que ele rola hoje, não como tá no manual.",
       "pr.2t": "Proposta",
-      "pr.2d": "Escopo, prazo e custo por escrito. Quando faz sentido, um protótipo antes do código.",
+      "pr.2d": "Escopo, prazo e valor no papel, sem meme. Se fizer sentido, um protótipo antes do código.",
       "pr.3t": "Desenvolvimento",
-      "pr.3d": "Entregas curtas. Você testa no caminho e ajustamos antes do fim, não depois.",
+      "pr.3d": "Entrega picada. Cê testa no caminho e nois ajusta antes do fim, não depois.",
       "pr.4t": "Entrega e suporte",
-      "pr.4d": "Colocamos no ar, treinamos a equipe e seguimos acompanhando.",
-      "ct.title": "Qual processo está travando a sua empresa?",
-      "ct.sub": "Escreva com as suas palavras. Respondemos com perguntas, uma ideia de caminho e os próximos passos.",
-      "ct.name": "Nome",
+      "pr.4d": "Nois sobe pro ar, treina a rapaziada e segue colando junto.",
+      "ct.title": "Bora farmar aura com nois?",
+      "ct.sub": "Chega mais. Conta qual processo tá travando a sua firma que nois responde com pergunta, uma ideia de caminho e os próximos passo.",
+      "ct.name": "Nome (ou vulgo)",
       "ct.email": "E-mail",
-      "ct.company": "Empresa",
-      "ct.msg": "O que você quer resolver?",
-      "ct.msgPh": "Ex.: conferir notas fiscais e lançar no ERP",
-      "ct.send": "Enviar",
-      "ct.sent": "Abrindo seu e-mail…",
-      "ft.top": "Voltar ao topo",
+      "ct.company": "Firma",
+      "ct.msg": "Qual é o B.O.?",
+      "ct.msgPh": "Ex.: conferir nota fiscal e lançar no ERP",
+      "ct.send": "Farmar aura",
+      "ct.sent": "Carregando a aura…",
+      "ft.tag": "Nois faz programa.",
+      "ft.top": "Subir pro topo",
+      "dl.home": "Início",
+      "dl.services": "Nois faz",
+      "dl.unlock": "Destrava",
+      "dl.works": "Os corre",
+      "dl.examples": "B.O.",
+      "dl.process": "Esquema",
+      "dl.contact": "Chama",
     },
     zh: {
-      "nav.services": "服务",
+      "nav.services": "咱干啥",
+      "nav.works": "作品",
       "nav.examples": "案例场景",
       "nav.process": "合作方式",
       "nav.cta": "联系",
       "hero.kicker": "定制软件与流程自动化",
-      "hero.t1": "告别手工表格。",
-      "hero.t2": "告别重复返工。",
-      "hero.t3": "解锁您的运营。",
+      "hero.title": "咱就是写程序的。",
       "hero.about": "lokp 为业务增长快于工具的企业，开发定制系统与自动化方案。",
       "hero.cta": "聊聊您的项目",
       "hero.cta2": "查看服务",
@@ -113,6 +126,13 @@
       "ul.2d": "我们梳理每个环节，去掉不必要的步骤，把剩下的交给自动化。",
       "ul.3t": "之后",
       "ul.3d": "流程自动运转，数据准确一致，团队重新专注于业务本身。",
+      "wk.title": "作品",
+      "wk.lead": "咱已经交付的项目。其他的还在锅里。",
+      "wk.1d": "商业自动化与电脑设备商城：产品目录、购物车、WhatsApp 询价。已上线，稳稳运行。",
+      "wk.visit": "去看看",
+      "wk.soon": "敬请期待（大概吧）",
+      "wk.soonD": "还在锅里。下一个也许就是你的。",
+      "wk.soonCta": "联系我们",
       "ex.title": "常见问题场景",
       "ex.lead": "这些情况几乎在每家企业都会出现。如果您觉得眼熟，我们就从这里开始聊。",
       "ex.before": "现在",
@@ -134,16 +154,24 @@
       "pr.3d": "小步快跑，您边用边测，问题在交付前就解决。",
       "pr.4t": "交付与支持",
       "pr.4d": "上线部署、培训团队，并持续跟进。",
-      "ct.title": "哪个流程正在拖慢您的公司？",
-      "ct.sub": "用您自己的话描述就好。我们会回复需要了解的问题、初步思路和下一步安排。",
+      "ct.title": "来跟咱一起刷 aura？",
+      "ct.sub": "来吧。说说哪个流程在拖慢您的公司，咱会回复需要了解的问题、初步思路和下一步安排。",
       "ct.name": "姓名",
       "ct.email": "电子邮箱",
       "ct.company": "公司",
       "ct.msg": "您想解决什么问题？",
       "ct.msgPh": "例如：核对发票并录入 ERP",
-      "ct.send": "发送",
+      "ct.send": "一起刷 aura",
       "ct.sent": "正在打开邮件…",
+      "ft.tag": "咱就是写程序的。",
       "ft.top": "返回顶部",
+      "dl.home": "首页",
+      "dl.services": "服务",
+      "dl.unlock": "解锁",
+      "dl.works": "作品",
+      "dl.examples": "场景",
+      "dl.process": "流程",
+      "dl.contact": "联系",
     },
   };
 
@@ -156,6 +184,7 @@
   } catch (_) {}
 
   const t = (k) => I18N[lang][k];
+  const onLangChange = [];
 
   /* ---------- split text into animated characters ---------- */
   function splitText(el) {
@@ -203,6 +232,7 @@
       const v = dict[el.dataset.i18nPh];
       if (v != null) el.placeholder = v;
     });
+    onLangChange.forEach((fn) => fn());
     try { localStorage.setItem("lokp-lang", lang); } catch (_) {}
   }
 
@@ -222,7 +252,6 @@
   function runPreloader(done) {
     const pre = $("#preloader");
     const count = $("#preCount");
-    document.body.classList.add("loading");
     if (reduced) { pre.classList.add("gone"); document.body.classList.remove("loading"); done(); return; }
     const start = performance.now();
     const dur = 1500;
@@ -263,91 +292,247 @@
   }
 
   /* ---------------------------------------------------------
-     Reveal on scroll
+     Screenshots: local file first, live capture as fallback
   --------------------------------------------------------- */
-  function reveals() {
-    $$(".svc-list, .ex-list, .hero-foot").forEach((g) =>
-      $$(".reveal", g).forEach((el, i) => el.style.setProperty("--rd", `${i * 80}ms`))
-    );
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (!e.isIntersecting) return;
-        e.target.classList.add("in");
-        io.unobserve(e.target);
-      });
-    }, { threshold: 0.2, rootMargin: "0px 0px -6% 0px" });
-    $$(".reveal, .rule, [data-split]:not(.hero-title .line)").forEach((el) => io.observe(el));
+  function loadShot(src, live, cb) {
+    const img = new Image();
+    img.onload = () => cb(img.src);
+    img.onerror = () => live && cb(`https://s.wordpress.com/mshots/v1/${encodeURIComponent(live)}?w=1440&h=900`);
+    img.src = src;
   }
 
   /* ---------------------------------------------------------
-     Scroll-driven: nav, hero padlock, unlock scene, process
+     Unlock page: lock opens across its three sub-steps
   --------------------------------------------------------- */
-  function scrollScenes() {
-    const nav = $("#nav");
-    const hero = $("#hero"), heroShackle = $("#heroShackle");
-    const unlock = $("#unlock"), sticky = $(".unlock-sticky");
-    const shackle = $("#bigShackle"), bL = $("#bigL"), bR = $("#bigR");
-    const ringFg = $("#ringFg");
-    const phases = $$(".phase"), dots = $$(".phase-dots i");
-    const stepsWrap = $("#steps"), steps = $$(".step");
-    const links = $$(".nav-links a");
-    const sections = links.map((a) => $(a.getAttribute("href")));
+  const unlockScene = (() => {
+    const shackle = $("#bigShackle"), bL = $("#bigL"), bR = $("#bigR"), ring = $("#ringFg");
+    const phases = $$("#unlock .phase"), dots = $$("#unlock .phase-dots i");
     const RING = 2 * Math.PI * 92;
-    let lastY = scrollY, curPhase = -1, ticking = false;
+    const easeInOut = (v) => (v < 0.5 ? 4 * v * v * v : 1 - Math.pow(-2 * v + 2, 3) / 2);
+    ring.style.strokeDasharray = RING;
+    let p = 0, raf = 0;
 
-    function update() {
-      ticking = false;
-      const y = scrollY, vh = innerHeight;
-
-      nav.classList.toggle("scrolled", y > 30);
-      nav.classList.toggle("hidden", y > lastY && y > 400);
-      lastY = y;
-
-      // hero padlock opens as the hero scrolls away
-      const hp = clamp(y / (hero.offsetHeight * 0.7));
-      heroShackle.setAttribute("transform", `translate(0 ${-easeOut(hp) * 46}) rotate(${-easeOut(clamp(hp * 1.6 - 0.6)) * 26} 27 132)`);
-
-      // unlock scene
-      const ur = unlock.getBoundingClientRect();
-      const p = ur.height > vh ? clamp(-ur.top / (ur.height - vh)) : 0;
-      sticky.style.setProperty("--p", p.toFixed(3));
-      const lift = clamp((p - 0.2) / 0.45);
-      const swing = clamp((p - 0.55) / 0.3);
+    function draw(v) {
+      const lift = clamp((v - 0.2) / 0.45), swing = clamp((v - 0.55) / 0.3);
       shackle.setAttribute("transform", `translate(0 ${-easeOut(lift) * 48}) rotate(${-easeOut(swing) * 32} 27 132)`);
-      const split = easeOut(clamp((p - 0.6) / 0.3)) * 10;
+      const split = easeOut(clamp((v - 0.6) / 0.3)) * 10;
       bL.setAttribute("transform", `translate(${-split} ${split * 0.4})`);
       bR.setAttribute("transform", `translate(${split} ${-split * 0.2})`);
-      ringFg.style.strokeDasharray = RING;
-      ringFg.style.strokeDashoffset = RING * (1 - p);
-      sticky.classList.toggle("light", p > 0.62);
-      const ph = Math.min(2, Math.floor(p * 3.001));
-      if (ph !== curPhase) {
-        phases.forEach((el, i) => {
-          el.classList.toggle("leaving", i < ph);
-          el.classList.toggle("active", i === ph);
-        });
-        dots.forEach((d, i) => d.classList.toggle("on", i === ph));
-        curPhase = ph;
-      }
-
-      // process: each step's line fills in sequence
-      const sr = stepsWrap.getBoundingClientRect();
-      const tp = clamp((vh * 0.85 - sr.top) / (vh * 0.55));
-      steps.forEach((s, i) => {
-        const f = clamp(tp * steps.length - i);
-        s.style.setProperty("--f", f.toFixed(3));
-        s.classList.toggle("on", f > 0.05);
-      });
-
-      // active nav link
-      let active = -1;
-      sections.forEach((s, i) => { if (s && s.getBoundingClientRect().top < vh * 0.4) active = i; });
-      links.forEach((a, i) => a.classList.toggle("active", i === active));
+      ring.style.strokeDashoffset = RING * (1 - Math.max(v, 0.04));
     }
-    addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
-    addEventListener("resize", update);
-    update();
-  }
+    draw(0);
+
+    return function to(step) {
+      phases.forEach((el, i) => { el.classList.toggle("leaving", i < step); el.classList.toggle("active", i === step); });
+      dots.forEach((d, i) => d.classList.toggle("on", i === step));
+      const from = p, target = step / 2, t0 = performance.now(), dur = reduced ? 1 : 1100;
+      cancelAnimationFrame(raf);
+      (function tick(now) {
+        const k = clamp((now - t0) / dur);
+        p = from + (target - from) * easeInOut(k);
+        draw(p);
+        if (k < 1) raf = requestAnimationFrame(tick);
+      })(t0);
+    };
+  })();
+
+  /* ---------------------------------------------------------
+     Deck: pages slide sideways, the dial turns between them
+     and crossfades the stage background
+  --------------------------------------------------------- */
+  const deck = (() => {
+    const track = $("#track"), pages = $$(".page", track), stage = $("#stageBg");
+    const dial = $("#dial"), rotor = $("#dialRotor"), prevBtn = $("#prevBtn"), nextBtn = $("#nextBtn");
+    const navLinks = $$(".nav-links a");
+    const N = pages.length, STEP = 360 / N, NS = "http://www.w3.org/2000/svg";
+    const pad = (v) => String(v).padStart(2, "0");
+    const list = (p, k) => (p.dataset[k] || "").split(",");
+    const at = (arr, s) => arr[Math.min(s, arr.length - 1)];
+    const stepsOf = (p) => +(p.dataset.steps || 1);
+    const svg = (tag, attrs) => {
+      const el = document.createElementNS(NS, tag);
+      for (const k in attrs) el.setAttribute(k, attrs[k]);
+      return el;
+    };
+    let idx = 0, sub = 0, busy = false, started = false;
+    let dragY = null, dragMoved = false;
+
+    // one background layer per distinct data-bg key
+    const layers = {};
+    pages.forEach((p) => list(p, "bg").forEach((key) => {
+      if (!key || layers[key]) return;
+      const d = document.createElement("div");
+      d.className = "bg-layer";
+      if (key.startsWith("shot:")) {
+        const [src, live] = key.slice(5).split("|");
+        d.classList.add("bg-shot");
+        loadShot(src, live, (u) => d.style.setProperty("--shot", `url("${u}")`));
+      } else d.classList.add(`bg-${key}`);
+      stage.appendChild(d);
+      layers[key] = d;
+    }));
+    $$("[data-shot]").forEach((el) => loadShot(el.dataset.shot, el.dataset.live, (u) => (el.style.backgroundImage = `url("${u}")`)));
+
+    // dial: fine ticks + one labelled notch per page. Notches are laid out from 12 o'clock;
+    // the rotor turns the active one to 9 o'clock, where the pointer sits at the screen edge.
+    // Labels are pre-rotated 90deg so they read horizontally once they reach the pointer.
+    const rotation = (i) => -90 - i * STEP;
+    for (let a = 0; a < 360; a += 4) rotor.appendChild(svg("line", { x1: 180, y1: 4, x2: 180, y2: 10, class: "dial-tick", transform: `rotate(${a} 180 180)` }));
+    const notches = pages.map((p, i) => {
+      const g = svg("g", { class: "dial-notch", transform: `rotate(${i * STEP} 180 180)` });
+      g.appendChild(svg("rect", { x: 168, y: 0, width: 24, height: 96 }));
+      g.appendChild(svg("line", { x1: 180, y1: 4, x2: 180, y2: 18 }));
+      g.appendChild(svg("text", { x: 180, y: 26, transform: "rotate(90 180 26)" }));
+      g.addEventListener("click", () => { if (!dragMoved) go(i); });
+      rotor.appendChild(g);
+      return g;
+    });
+    const labelDial = () => notches.forEach((g, i) => (g.lastChild.textContent = t(pages[i].dataset.label) || pad(i + 1)));
+    onLangChange.push(labelDial);
+    $("#dialTotal").textContent = pad(N);
+
+    // stagger reveals inside each page
+    pages.forEach((p) => $$(".reveal", p).forEach((el, i) => el.style.setProperty("--rd", `${120 + i * 70}ms`)));
+    const animated = (p) => $$(".reveal, [data-split], .step, .hero-mark", p);
+
+    function render() {
+      track.style.setProperty("--i", idx);
+      pages.forEach((p, i) => {
+        const s = i < idx ? stepsOf(p) - 1 : i > idx ? 0 : sub;
+        p.classList.toggle("is-dark", at(list(p, "theme"), s) === "dark");
+        p.classList.toggle("active", i === idx);
+        p.inert = i !== idx;
+      });
+      const p = pages[idx];
+      const bgKey = at(list(p, "bg"), sub);
+      for (const k in layers) layers[k].classList.toggle("on", k === bgKey);
+      document.body.classList.toggle("theme-dark", at(list(p, "theme"), sub) === "dark");
+      rotor.style.transform = `rotate(${rotation(idx)}deg)`;
+      notches.forEach((g, i) => g.classList.toggle("on", i === idx));
+      $("#dialNum").textContent = pad(idx + 1);
+      prevBtn.disabled = idx === 0 && sub === 0;
+      nextBtn.disabled = idx === N - 1;
+      const navKey = p.dataset.nav || p.id;
+      navLinks.forEach((a) => a.classList.toggle("active", a.hash === `#${navKey}`));
+      if (p.id === "unlock") unlockScene(sub);
+      if (started) animated(p).forEach((el) => el.classList.add("in"));
+      try { history.replaceState(null, "", `#${p.id}`); } catch (_) {}
+    }
+
+    function lock(ms) { busy = true; clearTimeout(lock.t); lock.t = setTimeout(() => (busy = false), ms); }
+
+    function go(i, s = 0) {
+      i = Math.max(0, Math.min(N - 1, i));
+      if (i === idx && s === sub) return render();
+      const old = pages[idx];
+      idx = i; sub = s;
+      lock(950);
+      pages[idx].scrollTop = 0;
+      render();
+      // replay animations next time the old page comes back
+      if (old !== pages[idx]) setTimeout(() => { if (old !== pages[idx]) animated(old).forEach((el) => el.classList.remove("in")); }, 1000);
+    }
+    function next() {
+      if (sub < stepsOf(pages[idx]) - 1) { sub++; lock(750); render(); }
+      else if (idx < N - 1) go(idx + 1, 0);
+    }
+    function prev() {
+      if (sub > 0) { sub--; lock(750); render(); }
+      else if (idx > 0) go(idx - 1, stepsOf(pages[idx - 1]) - 1);
+    }
+
+    // a page with more content than the screen scrolls natively first
+    const canScroll = (el, dir) => (dir > 0 ? el.scrollTop + el.clientHeight < el.scrollHeight - 2 : el.scrollTop > 2);
+
+    // wheel: one page per gesture (ignore trackpad inertia tails)
+    let lastWheel = 0;
+    addEventListener("wheel", (e) => {
+      if (document.body.classList.contains("loading")) return e.preventDefault();
+      const vertical = Math.abs(e.deltaY) >= Math.abs(e.deltaX);
+      const d = vertical ? e.deltaY : e.deltaX;
+      if (vertical && canScroll(pages[idx], Math.sign(d))) return;
+      e.preventDefault();
+      const now = performance.now(), gap = now - lastWheel;
+      lastWheel = now;
+      if (busy || gap < 160 || Math.abs(d) < 4) return;
+      d > 0 ? next() : prev();
+    }, { passive: false });
+
+    addEventListener("keydown", (e) => {
+      if (e.target.closest("input, textarea")) return;
+      if (["ArrowDown", "ArrowUp"].includes(e.key) && canScroll(pages[idx], e.key === "ArrowDown" ? 1 : -1)) return;
+      if (e.key === " " && e.target.closest("button, a")) return;
+      const fwd = ["ArrowRight", "ArrowDown", "PageDown", " "].includes(e.key);
+      const back = ["ArrowLeft", "ArrowUp", "PageUp"].includes(e.key);
+      if (e.key === "Home") { e.preventDefault(); go(0); }
+      else if (e.key === "End") { e.preventDefault(); go(N - 1); }
+      else if (fwd || back) { e.preventDefault(); if (!busy) fwd ? next() : prev(); }
+    });
+
+    // touch: horizontal swipe pages; vertical swipe pages once the page can't scroll further
+    let tx = null, ty = 0, atTop = false, atBottom = false;
+    addEventListener("touchstart", (e) => {
+      if (e.target.closest(".dial")) return;
+      tx = e.touches[0].clientX; ty = e.touches[0].clientY;
+      atTop = !canScroll(pages[idx], -1); atBottom = !canScroll(pages[idx], 1);
+    }, { passive: true });
+    addEventListener("touchend", (e) => {
+      if (tx == null) return;
+      const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
+      tx = null;
+      if (busy) return;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.2) dx < 0 ? next() : prev();
+      else if (dy < -70 && atBottom) next();
+      else if (dy > 70 && atTop) prev();
+    }, { passive: true });
+
+    // dial: drag it up/down to spin, release snaps to the nearest page
+    const DRAG = 0.3; // degrees per pixel
+    dial.addEventListener("pointerdown", (e) => { dragY = e.clientY; dragMoved = false; });
+    addEventListener("pointermove", (e) => {
+      if (dragY == null) return;
+      const dy = e.clientY - dragY;
+      if (!dragMoved && Math.abs(dy) > 6) { dragMoved = true; dial.classList.add("dragging"); }
+      if (dragMoved) rotor.style.transform = `rotate(${rotation(idx) - dy * DRAG}deg)`;
+    });
+    addEventListener("pointerup", (e) => {
+      if (dragY == null) return;
+      const dy = e.clientY - dragY;
+      dragY = null;
+      dial.classList.remove("dragging");
+      if (dragMoved) go(idx + Math.round((dy * DRAG) / STEP));
+      setTimeout(() => (dragMoved = false), 0);
+    });
+
+    prevBtn.addEventListener("click", prev);
+    nextBtn.addEventListener("click", next);
+
+    // in-page anchors jump to their page
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+      const i = pages.findIndex((p) => p.id === a.hash.slice(1));
+      if (i < 0) return;
+      e.preventDefault();
+      go(i);
+    });
+
+    // keep the slide aligned while resizing
+    addEventListener("resize", () => {
+      track.style.transition = "none";
+      render();
+      requestAnimationFrame(() => (track.style.transition = ""));
+    });
+
+    return {
+      init() {
+        idx = Math.max(0, pages.findIndex((p) => `#${p.id}` === location.hash));
+        labelDial();
+        render();
+      },
+      start() { started = true; render(); },
+    };
+  })();
 
   /* ---------------------------------------------------------
      Contact form → mailto
@@ -373,14 +558,6 @@
   $("#year").textContent = new Date().getFullYear();
   applyLang(false);
   contactForm();
-  scrollScenes();
-
-  runPreloader(() => {
-    $$(".hero-title .line").forEach((el, i) => {
-      el.style.setProperty("--d", `${i * 140}ms`);
-      el.classList.add("in");
-    });
-    $(".hero-mark").classList.add("in");
-    setTimeout(reveals, 500);
-  });
+  deck.init();
+  runPreloader(() => deck.start());
 })();
