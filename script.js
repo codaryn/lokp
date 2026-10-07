@@ -75,7 +75,7 @@
       "pr.3d": "Entrega picada. Cê testa no caminho e nois ajusta antes do fim, não depois.",
       "pr.4t": "Entrega e suporte",
       "pr.4d": "Nois sobe pro ar, treina a rapaziada e segue colando junto.",
-      "ct.title": "Bora farmar aura com nois?",
+      "ct.title": "Vem farmar aura com nois.",
       "ct.sub": "Chega mais. Conta qual processo tá travando a sua firma que nois responde com pergunta, uma ideia de caminho e os próximos passo.",
       "ct.name": "Nome (ou vulgo)",
       "ct.email": "E-mail",
@@ -154,7 +154,7 @@
       "pr.3d": "小步快跑，您边用边测，问题在交付前就解决。",
       "pr.4t": "交付与支持",
       "pr.4d": "上线部署、培训团队，并持续跟进。",
-      "ct.title": "来跟咱一起刷 aura？",
+      "ct.title": "来跟咱一起刷 aura。",
       "ct.sub": "来吧。说说哪个流程在拖慢您的公司，咱会回复需要了解的问题、初步思路和下一步安排。",
       "ct.name": "姓名",
       "ct.email": "电子邮箱",
@@ -355,7 +355,7 @@
       return el;
     };
     let idx = 0, sub = 0, busy = false, started = false;
-    let dragY = null, dragMoved = false;
+    let dragStart = null, dragMoved = false;
 
     // one background layer per distinct data-bg key
     const layers = {};
@@ -373,21 +373,30 @@
     }));
     $$("[data-shot]").forEach((el) => loadShot(el.dataset.shot, el.dataset.live, (u) => (el.style.backgroundImage = `url("${u}")`)));
 
-    // dial: fine ticks + one labelled notch per page. Notches are laid out from 12 o'clock;
-    // the rotor turns the active one to 9 o'clock, where the pointer sits at the screen edge.
-    // Labels are pre-rotated 90deg so they read horizontally once they reach the pointer.
-    const rotation = (i) => -90 - i * STEP;
+    // dial: fine ticks + one labelled notch per page, laid out from 12 o'clock.
+    // Side wheel (tablet/desktop): the active notch turns to 9 o'clock, at the right screen edge,
+    // and labels are pre-rotated 90deg so they read horizontally there.
+    // Bottom wheel (phones): the active notch stays at 12 o'clock, labels upright.
+    const bottomMQ = matchMedia("(max-width: 560px)");
+    const rotation = (i) => (bottomMQ.matches ? 0 : -90) - i * STEP;
     for (let a = 0; a < 360; a += 4) rotor.appendChild(svg("line", { x1: 180, y1: 4, x2: 180, y2: 10, class: "dial-tick", transform: `rotate(${a} 180 180)` }));
     const notches = pages.map((p, i) => {
       const g = svg("g", { class: "dial-notch", transform: `rotate(${i * STEP} 180 180)` });
       g.appendChild(svg("rect", { x: 168, y: 0, width: 24, height: 96 }));
       g.appendChild(svg("line", { x1: 180, y1: 4, x2: 180, y2: 18 }));
-      g.appendChild(svg("text", { x: 180, y: 26, transform: "rotate(90 180 26)" }));
+      g.appendChild(svg("text", { x: 180 }));
       g.addEventListener("click", () => { if (!dragMoved) go(i); });
       rotor.appendChild(g);
       return g;
     });
     const labelDial = () => notches.forEach((g, i) => (g.lastChild.textContent = t(pages[i].dataset.label) || pad(i + 1)));
+    const orientDial = () => notches.forEach((g) => {
+      const text = g.lastChild;
+      if (bottomMQ.matches) { text.setAttribute("y", 32); text.removeAttribute("transform"); }
+      else { text.setAttribute("y", 26); text.setAttribute("transform", "rotate(90 180 26)"); }
+    });
+    orientDial();
+    bottomMQ.addEventListener("change", () => { orientDial(); render(); });
     onLangChange.push(labelDial);
     $("#dialTotal").textContent = pad(N);
 
@@ -487,20 +496,22 @@
     }, { passive: true });
 
     // dial: drag it up/down to spin, release snaps to the nearest page
+    // side wheel: dragging down brings the next page; bottom wheel: dragging left does
     const DRAG = 0.3; // degrees per pixel
-    dial.addEventListener("pointerdown", (e) => { dragY = e.clientY; dragMoved = false; });
+    const dragDelta = (e) => (bottomMQ.matches ? dragStart.x - e.clientX : e.clientY - dragStart.y);
+    dial.addEventListener("pointerdown", (e) => { dragStart = { x: e.clientX, y: e.clientY }; dragMoved = false; });
     addEventListener("pointermove", (e) => {
-      if (dragY == null) return;
-      const dy = e.clientY - dragY;
-      if (!dragMoved && Math.abs(dy) > 6) { dragMoved = true; dial.classList.add("dragging"); }
-      if (dragMoved) rotor.style.transform = `rotate(${rotation(idx) - dy * DRAG}deg)`;
+      if (!dragStart) return;
+      const d = dragDelta(e);
+      if (!dragMoved && Math.abs(d) > 6) { dragMoved = true; dial.classList.add("dragging"); }
+      if (dragMoved) rotor.style.transform = `rotate(${rotation(idx) - d * DRAG}deg)`;
     });
     addEventListener("pointerup", (e) => {
-      if (dragY == null) return;
-      const dy = e.clientY - dragY;
-      dragY = null;
+      if (!dragStart) return;
+      const d = dragDelta(e);
+      dragStart = null;
       dial.classList.remove("dragging");
-      if (dragMoved) go(idx + Math.round((dy * DRAG) / STEP));
+      if (dragMoved) go(idx + Math.round((d * DRAG) / STEP));
       setTimeout(() => (dragMoved = false), 0);
     });
 
