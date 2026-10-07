@@ -1,5 +1,5 @@
 /* =========================================================
-   lokp — interactions & animations (vanilla JS, no deps)
+   lokp: interactions & animations (vanilla JS, no deps)
    ========================================================= */
 (() => {
   "use strict";
