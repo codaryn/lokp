@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>lokp — Unlock Your Operation</title>
+  <meta name="description" content="lokp — software sob demanda, soluções e automações. 定制软件、解决方案与自动化。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 360'%3E%3Cpath fill='%23111' d='M5 132V125A115 115 0 0 1 235 125V132H190V125A70 70 0 0 0 50 125V132Z'/%3E%3Cpath fill='%23111' d='M5 145H63V265L188 353H45Q5 353 5 313Z'/%3E%3Cpath fill='%23111' d='M115 145H190Q235 145 235 190V338L115 254Z'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="logo-mark" viewBox="0 0 240 360">
+        <path d="M5 132V125A115 115 0 0 1 235 125V132H190V125A70 70 0 0 0 50 125V132Z"/>
+        <path d="M5 145H63V265L188 353H45Q5 353 5 313Z"/>
+        <path d="M115 145H190Q235 145 235 190V338L115 254Z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="pre-inner">
+      <svg class="pre-lock" viewBox="-10 -60 260 430">
+        <g class="pre-shackle">
+          <path d="M5 132V125A115 115 0 0 1 235 125V132H190V125A70 70 0 0 0 50 125V132Z"/>
+        </g>
+        <path class="pre-body pre-body-l" d="M5 145H63V265L188 353H45Q5 353 5 313Z"/>
+        <path class="pre-body pre-body-r" d="M115 145H190Q235 145 235 190V338L115 254Z"/>
+      </svg>
+      <div class="pre-count"><span id="preCount">0</span></div>
+    </div>
+    <div class="pre-panel pre-panel-l"></div>
+    <div class="pre-panel pre-panel-r"></div>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="brand" aria-label="lokp">
+      <svg class="brand-mark"><use href="#logo-mark"/></svg>
+      <span class="brand-word">lokp</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#servicos" data-i18n="nav.services">Serviços</a>
+      <a href="#exemplos" data-i18n="nav.examples">Exemplos</a>
+      <a href="#processo" data-i18n="nav.process">Como trabalhamos</a>
+    </nav>
+    <div class="nav-right">
+      <button class="lang-toggle" id="langToggle" aria-label="Alternar idioma / 切换语言">
+        <span class="lang-opt" data-l="pt">PT</span>
+        <span class="lang-opt" data-l="zh">中文</span>
+        <span class="lang-knob"></span>
+      </button>
+      <a href="#contato" class="nav-contact"><span data-i18n="nav.cta">Contato</span> <i>↗</i></a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <svg class="hero-mark" viewBox="-20 -90 280 470" aria-hidden="true">
+        <g id="heroShackle"><path d="M5 132V125A115 115 0 0 1 235 125V132H190V125A70 70 0 0 0 50 125V132Z"/></g>
+        <path d="M5 145H63V265L188 353H45Q5 353 5 313Z"/>
+        <path d="M115 145H190Q235 145 235 190V338L115 254Z"/>
+      </svg>
+
+      <div class="container hero-inner">
+        <p class="hero-kicker reveal" data-i18n="hero.kicker">Software sob demanda e automação</p>
+        <h1 class="hero-title">
+          <span class="line" data-split data-i18n="hero.t1">Menos planilha.</span>
+          <span class="line" data-split data-i18n="hero.t2">Menos retrabalho.</span>
+          <span class="line line-strong" data-split data-i18n="hero.t3">Destrave sua operação.</span>
+        </h1>
+
+        <div class="hero-foot">
+          <i class="rule"></i>
+          <p class="reveal" data-i18n="hero.about">A lokp desenvolve sistemas sob medida e automações para empresas que cresceram mais rápido que as próprias ferramentas.</p>
+          <div class="hero-actions reveal">
+            <a href="#contato" class="btn btn-dark magnetic"><span data-i18n="hero.cta">Conversar sobre um projeto</span></a>
+            <a href="#servicos" class="link-arrow"><span data-i18n="hero.cta2">Ver serviços</span> <i>↓</i></a>
+          </div>
+          <p class="hero-note reveal" data-i18n="hero.note">Atendimento em português e chinês.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section" id="servicos">
+      <div class="container">
+        <header class="sec-head">
+          <span class="sec-num reveal">(01)</span>
+          <h2 class="sec-title" data-split data-i18n="sv.title">O que fazemos</h2>
+          <p class="sec-lead reveal" data-i18n="sv.lead">Projetos pequenos ou grandes, sempre escritos para o seu processo, não adaptados de um pacote pronto.</p>
+        </header>
+
+        <ol class="svc-list">
+          <li class="svc reveal">
+            <span class="svc-n">01</span>
+            <h3 data-i18n="sv.1t">Software sob medida</h3>
+            <p data-i18n="sv.1d">Sistemas internos, portais e aplicativos feitos para o jeito que a sua empresa trabalha.</p>
+            <span class="svc-arrow">→</span>
+          </li>
+          <li class="svc reveal">
+            <span class="svc-n">02</span>
+            <h3 data-i18n="sv.2t">Automação de processos</h3>
+            <p data-i18n="sv.2d">Robôs para o trabalho repetitivo: conferir, copiar, lançar, enviar. Rodando todo dia, no horário certo.</p>
+            <span class="svc-arrow">→</span>
+          </li>
+          <li class="svc reveal">
+            <span class="svc-n">03</span>
+            <h3 data-i18n="sv.3t">Integrações</h3>
+            <p data-i18n="sv.3d">ERP, CRM, e-commerce, banco e planilhas trocando dados sem ninguém no meio.</p>
+            <span class="svc-arrow">→</span>
+          </li>
+          <li class="svc reveal">
+            <span class="svc-n">04</span>
+            <h3 data-i18n="sv.4t">IA aplicada</h3>
+            <p data-i18n="sv.4d">Leitura de documentos, triagem de e-mails e atendimento, com revisão humana onde for necessário.</p>
+            <span class="svc-arrow">→</span>
+          </li>
+          <li class="svc reveal">
+            <span class="svc-n">05</span>
+            <h3 data-i18n="sv.5t">Painéis e relatórios</h3>
+            <p data-i18n="sv.5d">Os números que você já tem, organizados para decidir rápido.</p>
+            <span class="svc-arrow">→</span>
+          </li>
+          <li class="svc reveal">
+            <span class="svc-n">06</span>
+            <h3 data-i18n="sv.6t">Suporte contínuo</h3>
+            <p data-i18n="sv.6d">Manutenção, ajustes e melhorias depois da entrega. O sistema acompanha a empresa.</p>
+            <span class="svc-arrow">→</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ UNLOCK (scroll-driven) ============ -->
+    <section class="unlock" id="unlock">
+      <div class="unlock-sticky">
+        <div class="unlock-dark"></div>
+        <div class="container unlock-grid">
+          <div class="unlock-visual">
+            <div class="unlock-ring">
+              <svg viewBox="0 0 200 200" class="ring-svg">
+                <circle cx="100" cy="100" r="92" class="ring-bg"/>
+                <circle cx="100" cy="100" r="92" class="ring-fg" id="ringFg"/>
+              </svg>
+              <svg class="big-lock" viewBox="-10 -70 260 440">
+                <g id="bigShackle"><path d="M5 132V125A115 115 0 0 1 235 125V132H190V125A70 70 0 0 0 50 125V132Z"/></g>
+                <g id="bigBody">
+                  <path id="bigL" d="M5 145H63V265L188 353H45Q5 353 5 313Z"/>
+                  <path id="bigR" d="M115 145H190Q235 145 235 190V338L115 254Z"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <div class="unlock-copy">
+            <span class="sec-num">(02)</span>
+            <div class="phases">
+              <div class="phase active" data-phase="0">
+                <h3 data-i18n="ul.1t">Antes</h3>
+                <p data-i18n="ul.1d">Planilhas manuais, retrabalho, sistemas que não conversam e uma equipe presa em tarefas repetitivas.</p>
+              </div>
+              <div class="phase" data-phase="1">
+                <h3 data-i18n="ul.2t">Durante</h3>
+                <p data-i18n="ul.2d">Mapeamos cada etapa, cortamos o que não precisa existir e automatizamos o resto.</p>
+              </div>
+              <div class="phase" data-phase="2">
+                <h3 data-i18n="ul.3t">Depois</h3>
+                <p data-i18n="ul.3d">O processo roda sozinho, os dados batem e a equipe volta a cuidar do negócio.</p>
+              </div>
+            </div>
+            <div class="phase-dots"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXAMPLES (before / after) ============ -->
+    <section class="section" id="exemplos">
+      <div class="container">
+        <header class="sec-head">
+          <span class="sec-num reveal">(03)</span>
+          <h2 class="sec-title" data-split data-i18n="ex.title">Problemas comuns</h2>
+          <p class="sec-lead reveal" data-i18n="ex.lead">Situações que aparecem em quase toda operação. Se alguma parece familiar, é por aí que a conversa começa.</p>
+        </header>
+
+        <div class="ex-labels">
+          <span data-i18n="ex.before">Hoje</span>
+          <span data-i18n="ex.after">Com automação</span>
+        </div>
+        <div class="ex-list">
+          <div class="ex-row reveal">
+            <p class="ex-before"><span data-i18n="ex.1a">Duas pessoas passam o fim do mês conferindo notas fiscais contra pedidos.</span></p>
+            <span class="ex-arrow">→</span>
+            <p class="ex-after" data-i18n="ex.1b">Um robô cruza tudo diariamente e só aponta o que não bate.</p>
+          </div>
+          <div class="ex-row reveal">
+            <p class="ex-before"><span data-i18n="ex.2a">Pedidos do e-commerce digitados à mão no ERP.</span></p>
+            <span class="ex-arrow">→</span>
+            <p class="ex-after" data-i18n="ex.2b">O pedido entra no ERP sozinho e o estoque se atualiza em todos os canais.</p>
+          </div>
+          <div class="ex-row reveal">
+            <p class="ex-before"><span data-i18n="ex.3a">Relatório semanal montado copiando dados de cinco planilhas.</span></p>
+            <span class="ex-arrow">→</span>
+            <p class="ex-after" data-i18n="ex.3b">Um painel sempre atualizado, sem copiar e colar.</p>
+          </div>
+          <div class="ex-row reveal">
+            <p class="ex-before"><span data-i18n="ex.4a">Clientes esperando resposta para as mesmas perguntas de sempre.</span></p>
+            <span class="ex-arrow">→</span>
+            <p class="ex-after" data-i18n="ex.4b">O básico é respondido na hora; a equipe fica com os casos que exigem atenção.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="section" id="processo">
+      <div class="container">
+        <header class="sec-head">
+          <span class="sec-num reveal">(04)</span>
+          <h2 class="sec-title" data-split data-i18n="pr.title">Como trabalhamos</h2>
+        </header>
+        <div class="steps" id="steps">
+          <div class="step">
+            <i class="step-line"></i>
+            <span class="step-n">01</span>
+            <h4 data-i18n="pr.1t">Conversa</h4>
+            <p data-i18n="pr.1d">Entendemos o processo como ele acontece hoje, não como está no manual.</p>
+          </div>
+          <div class="step">
+            <i class="step-line"></i>
+            <span class="step-n">02</span>
+            <h4 data-i18n="pr.2t">Proposta</h4>
+            <p data-i18n="pr.2d">Escopo, prazo e custo por escrito. Quando faz sentido, um protótipo antes do código.</p>
+          </div>
+          <div class="step">
+            <i class="step-line"></i>
+            <span class="step-n">03</span>
+            <h4 data-i18n="pr.3t">Desenvolvimento</h4>
+            <p data-i18n="pr.3d">Entregas curtas. Você testa no caminho e ajustamos antes do fim, não depois.</p>
+          </div>
+          <div class="step">
+            <i class="step-line"></i>
+            <span class="step-n">04</span>
+            <h4 data-i18n="pr.4t">Entrega e suporte</h4>
+            <p data-i18n="pr.4d">Colocamos no ar, treinamos a equipe e seguimos acompanhando.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contato">
+      <div class="container">
+        <header class="sec-head">
+          <span class="sec-num reveal">(05)</span>
+        </header>
+        <h2 class="contact-title" data-split data-i18n="ct.title">Qual processo está travando a sua empresa?</h2>
+        <div class="contact-grid">
+          <div class="contact-copy">
+            <p class="reveal" data-i18n="ct.sub">Escreva com as suas palavras. Respondemos com perguntas, uma ideia de caminho e os próximos passos.</p>
+            <a class="contact-mail reveal" href="mailto:contato@lokptech.com">contato@lokptech.com</a>
+          </div>
+          <form class="form reveal" id="contactForm">
+            <div class="form-row">
+              <label class="field">
+                <span data-i18n="ct.name">Nome</span>
+                <input name="name" required autocomplete="name">
+              </label>
+              <label class="field">
+                <span data-i18n="ct.email">E-mail</span>
+                <input name="email" type="email" required autocomplete="email">
+              </label>
+            </div>
+            <label class="field">
+              <span data-i18n="ct.company">Empresa</span>
+              <input name="company" autocomplete="organization">
+            </label>
+            <label class="field">
+              <span data-i18n="ct.msg">O que você quer resolver?</span>
+              <textarea name="message" rows="3" required data-i18n-ph="ct.msgPh" placeholder="Ex.: conferir notas fiscais e lançar no ERP"></textarea>
+            </label>
+            <button type="submit" class="btn btn-dark magnetic"><span data-i18n="ct.send">Enviar</span></button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-tag">Unlock Your Operation.</span>
+      <span class="footer-copy">© <span id="year">2026</span> lokp</span>
+      <a href="#top" class="link-arrow"><span data-i18n="ft.top">Voltar ao topo</span> <i>↑</i></a>
+    </div>
+    <div class="footer-giant" aria-hidden="true">lokp</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
