@@ -45,12 +45,6 @@
       <svg class="brand-mark"><use href="#logo-mark"/></svg>
       <span class="brand-word">lokp</span>
     </a>
-    <nav class="nav-links">
-      <a href="#servicos" data-i18n="nav.services">Soluções</a>
-      <a href="#projetos" data-i18n="nav.works">Projetos</a>
-      <a href="#exemplos" data-i18n="nav.examples">Casos de uso</a>
-      <a href="#processo" data-i18n="nav.process">Metodologia</a>
-    </nav>
     <div class="nav-right">
       <button class="lang-toggle" id="langToggle" aria-label="Alternar idioma / 切换语言">
         <span class="lang-opt" data-l="pt">PT</span>
@@ -70,6 +64,7 @@
 
       <!-- HERO -->
       <section class="page" id="top" data-label="dl.home" data-bg="light" data-theme="light">
+        <div class="hero-glow" aria-hidden="true"><i></i><i></i><i></i></div>
         <svg class="hero-mark" viewBox="-20 -90 280 470" aria-hidden="true">
           <g class="hero-shackle"><path d="M5 132V125A115 115 0 0 1 235 125V132H190V125A70 70 0 0 0 50 125V132Z"/></g>
           <path d="M5 145H63V265L188 353H45Q5 353 5 313Z"/>
@@ -77,13 +72,10 @@
         </svg>
         <div class="page-inner">
           <div class="container center hero">
-            <p class="kicker reveal" data-i18n="hero.kicker">Software sob medida e automação de processos</p>
-            <h1 class="hero-title" data-split data-i18n="hero.title">Tecnologia que impulsiona negócios.</h1>
-            <p class="lead reveal" data-i18n="hero.about">A lokp desenvolve sistemas sob medida e soluções de automação para empresas que cresceram mais rápido do que suas ferramentas.</p>
-            <div class="actions reveal">
-              <a href="#contato" class="btn btn-dark magnetic"><span data-i18n="hero.cta">Agendar uma conversa</span></a>
-              <a href="#projetos" class="link-arrow"><span data-i18n="hero.cta2">Conheça nossos projetos</span> <i>→</i></a>
-            </div>
+            <h1 class="hero-logo reveal" aria-label="lokp">
+              <svg class="hero-logo-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+              <span class="hero-logo-word" aria-hidden="true">lokp</span>
+            </h1>
           </div>
         </div>
       </section>

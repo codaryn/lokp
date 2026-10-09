@@ -16,17 +16,7 @@
   --------------------------------------------------------- */
   const I18N = {
     pt: {
-      "nav.services": "Soluções",
-      "nav.works": "Projetos",
-      "nav.examples": "Casos de uso",
-      "nav.process": "Metodologia",
       "nav.cta": "Fale conosco",
-      "hero.kicker": "Software sob medida e automação de processos",
-      "hero.title": "Tecnologia que impulsiona negócios.",
-      "hero.about": "A lokp desenvolve sistemas sob medida e soluções de automação para empresas que cresceram mais rápido do que suas ferramentas.",
-      "hero.cta": "Agendar uma conversa",
-      "hero.cta2": "Conheça nossos projetos",
-      "hero.note": "Atendimento em português e chinês.",
       "sv.title": "Nossas soluções",
       "sv.lead": "Projetos de qualquer porte, desenvolvidos de acordo com os processos da sua empresa, sem pacotes genéricos.",
       "sv.1t": "Software sob medida",
@@ -95,17 +85,7 @@
       "dl.contact": "Contato",
     },
     zh: {
-      "nav.services": "服务",
-      "nav.works": "作品",
-      "nav.examples": "案例场景",
-      "nav.process": "合作方式",
       "nav.cta": "联系",
-      "hero.kicker": "定制软件与流程自动化",
-      "hero.title": "以技术驱动业务增长。",
-      "hero.about": "lokp 为业务增长快于工具的企业，开发定制系统与自动化方案。",
-      "hero.cta": "聊聊您的项目",
-      "hero.cta2": "查看服务",
-      "hero.note": "支持葡萄牙语与中文沟通。",
       "sv.title": "我们做什么",
       "sv.lead": "无论项目大小，都按照您的流程从头编写，而不是套用现成的软件包。",
       "sv.1t": "定制软件",
@@ -343,7 +323,6 @@
   const deck = (() => {
     const track = $("#track"), pages = $$(".page", track), stage = $("#stageBg");
     const dial = $("#dial"), rotor = $("#dialRotor"), prevBtn = $("#prevBtn"), nextBtn = $("#nextBtn");
-    const navLinks = $$(".nav-links a");
     const N = pages.length, STEP = 360 / N, NS = "http://www.w3.org/2000/svg";
     const pad = (v) => String(v).padStart(2, "0");
     const list = (p, k) => (p.dataset[k] || "").split(",");
@@ -421,8 +400,6 @@
       $("#dialNum").textContent = pad(idx + 1);
       prevBtn.disabled = idx === 0 && sub === 0;
       nextBtn.disabled = idx === N - 1;
-      const navKey = p.dataset.nav || p.id;
-      navLinks.forEach((a) => a.classList.toggle("active", a.hash === `#${navKey}`));
       if (p.id === "unlock") unlockScene(sub);
       if (started) animated(p).forEach((el) => el.classList.add("in"));
       try { history.replaceState(null, "", `#${p.id}`); } catch (_) {}

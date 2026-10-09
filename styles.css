@@ -79,13 +79,12 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 .brand { display: inline-flex; align-items: center; gap: 9px; }
 .brand-mark { width: 18px; height: 27px; fill: currentColor; }
 .brand-word { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 25px; letter-spacing: -.04em; line-height: 1; }
-.nav-links { display: flex; gap: 32px; }
-.nav-links a, .nav-contact { position: relative; font-size: 14px; font-weight: 500; }
-.nav-links a::after, .nav-contact::after {
+.nav-contact { position: relative; font-size: 14px; font-weight: 500; }
+.nav-contact::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 1px; background: currentColor;
   transform: scaleX(0); transform-origin: right; transition: transform .45s var(--ease);
 }
-.nav-links a:hover::after, .nav-links a.active::after, .nav-contact:hover::after { transform: scaleX(1); transform-origin: left; }
+.nav-contact:hover::after { transform: scaleX(1); transform-origin: left; }
 .nav-contact i { font-style: normal; display: inline-block; transition: transform .4s var(--ease); }
 .nav-contact:hover i { transform: translate(2px, -2px); }
 .nav-right { display: flex; align-items: center; gap: 24px; }
@@ -177,17 +176,35 @@ html[lang="zh-CN"] .sec-title { letter-spacing: 0; line-height: 1.2; font-weight
 
 /* ---------- hero ---------- */
 .hero-mark {
-  position: absolute; z-index: 0; left: 50%; top: 52%; height: 96vh; width: auto; overflow: visible;
+  position: absolute; z-index: 0; left: 50%; top: 50%; height: 96vh; width: auto; overflow: visible;
   transform: translate(-50%, -50%); fill: var(--bg);
   filter: drop-shadow(16px 16px 28px var(--sh-d)) drop-shadow(-16px -16px 28px var(--sh-l));
   opacity: 0; transition: opacity 1.6s var(--ease);
 }
-.page.active .hero-mark.in { opacity: .9; }
+.page.active .hero-mark.in { opacity: .9; animation: hero-breathe 14s ease-in-out infinite alternate; }
+@keyframes hero-breathe { from { scale: 1; } to { scale: 1.035; } }
+
+/* slow drifting light behind the hero */
+.hero-glow { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.hero-glow i {
+  position: absolute; width: 70vmax; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(closest-side, var(--glow, rgba(255, 255, 255, .85)), transparent);
+  animation: glow-drift var(--d, 26s) ease-in-out infinite alternate; will-change: transform;
+}
+.hero-glow i:nth-child(1) { left: -25vmax; top: -30vmax; }
+.hero-glow i:nth-child(2) { right: -30vmax; bottom: -35vmax; --glow: rgba(185, 185, 185, .4); --d: 32s; animation-delay: -10s; }
+.hero-glow i:nth-child(3) { left: 30%; top: 40%; width: 50vmax; --d: 22s; animation-delay: -6s; animation-direction: alternate-reverse; }
+@keyframes glow-drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(12vmax, 8vmax) scale(1.12); }
+  100% { transform: translate(-6vmax, 14vmax) scale(.95); }
+}
 .hero-shackle { transition: transform 1.2s var(--ease); transform-origin: 27px 132px; transform-box: view-box; }
 .page.active .hero-mark.in .hero-shackle { transform: translateY(-34px) rotate(-18deg); }
-.hero-title { font-size: clamp(48px, 9vw, 136px); line-height: .95; letter-spacing: -.055em; font-weight: 800; }
-html[lang="zh-CN"] .hero-title { letter-spacing: 0; line-height: 1.15; font-weight: 900; }
-.hero .lead { margin-top: 28px; }
+#top .page-inner { padding-block: 84px; }
+.hero-logo { display: inline-flex; align-items: center; gap: clamp(14px, 2vw, 28px); color: var(--ink); }
+.hero-logo-mark { width: clamp(64px, 9vw, 120px); aspect-ratio: 2 / 3; height: auto; fill: currentColor; }
+.hero-logo-word { font-weight: 800; font-size: clamp(80px, 13vw, 180px); letter-spacing: -.055em; line-height: .9; }
 
 /* ---------- services ---------- */
 .svc-grid { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; margin-top: 52px; border-top: 1px solid var(--line); text-align: left; }
@@ -331,7 +348,6 @@ body.lang-out [data-i18n]:not([data-split]) { opacity: 0; }
 
 /* ---------- responsive ---------- */
 @media (max-width: 960px) {
-  .nav-links { display: none; }
   .svc-grid { grid-template-columns: 1fr 1fr; }
   .svc:not(:nth-child(3n)) { border-right: 0; }
   .svc:nth-child(odd) { border-right: 1px solid var(--line); }
