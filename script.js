@@ -540,7 +540,7 @@
       const label = $(".btn span", form);
       form.classList.add("sent");
       label.textContent = t("ct.sent");
-      location.href = `mailto:contato@lokptech.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      location.href = `mailto:lokptech@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       setTimeout(() => { form.classList.remove("sent"); label.textContent = t("ct.send"); }, 3500);
     });
   }
