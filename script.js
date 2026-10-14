@@ -77,6 +77,7 @@
       "ft.tag": "Software sob medida e automação.",
       "ft.top": "Voltar ao topo",
       "dl.home": "Início",
+      "hero.scroll": "Role para explorar",
       "dl.services": "Soluções",
       "dl.unlock": "Evolução",
       "dl.works": "Projetos",
@@ -146,6 +147,7 @@
       "ft.tag": "定制软件与流程自动化。",
       "ft.top": "返回顶部",
       "dl.home": "首页",
+      "hero.scroll": "向下滑动",
       "dl.services": "服务",
       "dl.unlock": "解锁",
       "dl.works": "作品",
@@ -454,6 +456,9 @@
       else if (e.key === "End") { e.preventDefault(); go(N - 1); }
       else if (fwd || back) { e.preventDefault(); if (!busy) fwd ? next() : prev(); }
     });
+
+    // hero scroll cue: click advances like a scroll
+    document.getElementById("scrollCue")?.addEventListener("click", () => { if (!busy) next(); });
 
     // touch: horizontal swipe pages; vertical swipe pages once the page can't scroll further
     let tx = null, ty = 0, atTop = false, atBottom = false;
