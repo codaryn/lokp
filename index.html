@@ -76,6 +76,11 @@
               <svg class="hero-logo-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
               <span class="hero-logo-word" aria-hidden="true">lokp</span>
             </h1>
+            <p class="hero-tag reveal" data-i18n="hero.tag">Software sob medida, automação e integração de sistemas para a sua empresa.</p>
+            <div class="actions reveal">
+              <a href="#contato" class="btn btn-dark magnetic"><span data-i18n="hero.cta">Fale conosco</span></a>
+              <a href="#servicos" class="link-arrow"><span data-i18n="hero.more">Conheça nossas soluções</span> <i>→</i></a>
+            </div>
           </div>
         </div>
         <button class="scroll-cue" id="scrollCue" type="button">
@@ -103,46 +108,11 @@
         </div>
       </section>
 
-      <!-- UNLOCK: three sub-steps on one page (antes → durante → depois) -->
-      <section class="page" id="unlock" data-label="dl.unlock" data-steps="3" data-bg="dark,dark,light" data-theme="dark,dark,light">
-        <div class="page-inner">
-          <div class="container center unlock">
-            <span class="sec-num">02</span>
-            <div class="unlock-ring">
-              <svg viewBox="0 0 200 200" class="ring-svg">
-                <circle cx="100" cy="100" r="92" class="ring-bg"/>
-                <circle cx="100" cy="100" r="92" class="ring-fg" id="ringFg"/>
-              </svg>
-              <svg class="big-lock" viewBox="-10 -70 260 440">
-                <g id="bigShackle"><path d="M5 132V125A115 115 0 0 1 235 125V132H190V125A70 70 0 0 0 50 125V132Z"/></g>
-                <path id="bigL" d="M5 145H63V265L188 353H45Q5 353 5 313Z"/>
-                <path id="bigR" d="M115 145H190Q235 145 235 190V338L115 254Z"/>
-              </svg>
-            </div>
-            <div class="phases">
-              <div class="phase active">
-                <h3 data-i18n="ul.1t">Antes</h3>
-                <p data-i18n="ul.1d">Planilhas manuais, retrabalho, sistemas desconectados e equipes dedicadas a tarefas repetitivas.</p>
-              </div>
-              <div class="phase">
-                <h3 data-i18n="ul.2t">Durante</h3>
-                <p data-i18n="ul.2d">Mapeamos cada etapa, eliminamos atividades desnecessárias e automatizamos o restante.</p>
-              </div>
-              <div class="phase">
-                <h3 data-i18n="ul.3t">Depois</h3>
-                <p data-i18n="ul.3d">Processos automatizados, dados consistentes e equipe focada no que gera valor para o negócio.</p>
-              </div>
-            </div>
-            <div class="phase-dots"><i></i><i></i><i></i></div>
-          </div>
-        </div>
-      </section>
-
       <!-- WORKS: all projects on one page; background = screenshot of the delivered one -->
       <section class="page" id="projetos" data-label="dl.works" data-bg="shot:assets/shots/infotekbrasil.png|https://infotekbrasil.com" data-theme="dark">
         <div class="page-inner">
           <div class="container center">
-            <span class="sec-num reveal">03</span>
+            <span class="sec-num reveal">02</span>
             <h2 class="sec-title" data-split data-i18n="wk.title">Projetos</h2>
             <p class="lead reveal" data-i18n="wk.lead">Soluções já entregues pela lokp. Novos projetos em desenvolvimento.</p>
             <div class="works-grid">
@@ -173,7 +143,7 @@
       <section class="page" id="exemplos" data-label="dl.examples" data-bg="light" data-theme="light">
         <div class="page-inner">
           <div class="container center">
-            <span class="sec-num reveal">04</span>
+            <span class="sec-num reveal">03</span>
             <h2 class="sec-title" data-split data-i18n="ex.title">Casos de uso</h2>
             <p class="lead reveal" data-i18n="ex.lead">Desafios comuns à maioria das empresas. Se algum deles faz parte da sua rotina, este é o ponto de partida.</p>
             <div class="ex-list">
@@ -202,7 +172,7 @@
       <section class="page" id="processo" data-label="dl.process" data-bg="dark" data-theme="dark">
         <div class="page-inner">
           <div class="container center">
-            <span class="sec-num reveal">05</span>
+            <span class="sec-num reveal">04</span>
             <h2 class="sec-title" data-split data-i18n="pr.title">Nossa metodologia</h2>
             <div class="steps">
               <div class="step"><i class="step-line"></i><span class="step-n">01</span><h4 data-i18n="pr.1t">Diagnóstico</h4><p data-i18n="pr.1d">Entendemos como o processo funciona na prática, e não apenas como está documentado.</p></div>
@@ -218,7 +188,7 @@
       <section class="page" id="contato" data-label="dl.contact" data-bg="light" data-theme="light">
         <div class="page-inner">
           <div class="container center contact">
-            <span class="sec-num reveal">06</span>
+            <span class="sec-num reveal">05</span>
             <h2 class="sec-title" data-split data-i18n="ct.title">Vamos conversar sobre o seu projeto.</h2>
             <p class="lead reveal" data-i18n="ct.sub">Conte-nos qual processo está limitando sua empresa. Retornaremos com as perguntas necessárias, uma proposta inicial de abordagem e os próximos passos.</p>
             <form class="form reveal" id="contactForm">
@@ -233,6 +203,7 @@
             <p class="fine reveal">
               <a class="contact-mail" href="mailto:lokptech@outlook.com">lokptech@outlook.com</a>
               <span>© <span id="year">2026</span> lokp · <span data-i18n="ft.tag">Software sob medida e automação.</span></span>
+              <a class="link-arrow" href="#top"><span data-i18n="ft.top">Voltar ao topo</span> <i>↑</i></a>
             </p>
           </div>
         </div>
@@ -252,7 +223,7 @@
         <path d="M173 0 L180 9 L187 0 Z" class="dial-pointer ptr-bottom"/>
       </svg>
     </div>
-    <div class="dial-count"><span id="dialNum">01</span><small>/<span id="dialTotal">07</span></small></div>
+    <div class="dial-count"><span id="dialNum">01</span><small>/<span id="dialTotal">06</span></small></div>
     <button class="dial-arrow" id="nextBtn" aria-label="Próxima">↓</button>
   </div>
 

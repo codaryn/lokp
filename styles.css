@@ -104,34 +104,30 @@ html[lang="pt-BR"] .lang-opt[data-l="pt"], html[lang="zh-CN"] .lang-opt[data-l="
 
 /* ---------- stage background (crossfaded per page) ---------- */
 .stage-bg { position: fixed; inset: 0; z-index: 0; background: #ececec; }
-.bg-layer { position: absolute; inset: 0; opacity: 0; transition: opacity 1.1s var(--ease); }
-.bg-layer.on { opacity: 1; }
+.bg-layer { position: absolute; inset: 0; opacity: 0; will-change: opacity; }
 .bg-light { background: #ececec; }
 .bg-dark { background: #111; }
 .bg-shot { background: #111; overflow: hidden; }
 .bg-shot::before {
   content: ""; position: absolute; inset: -4%; background: var(--shot) center top / cover no-repeat;
-  filter: blur(8px) saturate(.8); opacity: .45; transform: scale(1.12); transition: transform 2s var(--ease);
+  filter: blur(8px) saturate(.8); opacity: .45; transform: scale(1.04);
 }
-.bg-shot.on::before { transform: scale(1.02); }
 .bg-shot::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(17,17,17,.55), rgba(17,17,17,.9)); }
 
 /* ---------- deck ---------- */
 .deck { position: fixed; inset: 0; z-index: 1; overflow: hidden; }
 .deck-track {
-  display: flex; height: 100%; --i: 0;
-  transform: translate3d(calc(var(--i) * -100%), 0, 0); transition: transform 1s var(--ease-in-out);
+  display: flex; height: 100%; will-change: transform;
 }
 .page {
   position: relative; flex: 0 0 100%; height: 100%; color: var(--ink);
-  overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: none;
+  overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: none; touch-action: pan-y;
 }
 .page::-webkit-scrollbar { display: none; }
 .page-inner {
   position: relative; z-index: 1; min-height: 100%; display: flex; align-items: center;
-  padding: 96px 0 72px; transition: transform 1s var(--ease-in-out), opacity .8s var(--ease);
+  padding: 96px 0 72px; will-change: transform, opacity;
 }
-.page:not(.active) .page-inner { opacity: .2; transform: scale(.94); }
 
 /* ---------- type ---------- */
 .kicker { font-size: 15px; font-weight: 500; color: var(--ink-2); margin-bottom: 24px; }
@@ -201,7 +197,9 @@ html[lang="zh-CN"] .sec-title { letter-spacing: 0; line-height: 1.2; font-weight
 }
 .hero-shackle { transition: transform 1.2s var(--ease); transform-origin: 27px 132px; transform-box: view-box; }
 .page.active .hero-mark.in .hero-shackle { transform: translateY(-34px) rotate(-18deg); }
-#top .page-inner { padding-block: 84px; }
+#top .page-inner { padding: 84px 0 150px; }
+.hero-tag { font-size: clamp(17px, 1.6vw, 21px); color: var(--ink-2); max-width: 34ch; margin-top: 28px; }
+#top .actions { margin-top: 32px; }
 .hero-logo { display: inline-flex; align-items: center; gap: clamp(14px, 2vw, 28px); color: var(--ink); }
 .hero-logo-mark { width: clamp(64px, 9vw, 120px); aspect-ratio: 2 / 3; height: auto; fill: currentColor; }
 .hero-logo-word { font-weight: 800; font-size: clamp(80px, 13vw, 180px); letter-spacing: -.055em; line-height: .9; }
@@ -229,6 +227,7 @@ html[lang="zh-CN"] .sec-title { letter-spacing: 0; line-height: 1.2; font-weight
   70%  { transform: translateY(12px); opacity: 0; }
   100% { transform: translateY(12px); opacity: 0; }
 }
+@media (max-height: 640px) { .scroll-cue { display: none; } }
 @keyframes scroll-cue-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
 
 /* ---------- services ---------- */
@@ -247,26 +246,6 @@ html[lang="zh-CN"] .sec-title { letter-spacing: 0; line-height: 1.2; font-weight
   .svc:hover h3 { color: var(--bg); }
   .svc:hover p, .svc:hover .svc-n { color: color-mix(in srgb, var(--bg) 70%, transparent); }
 }
-
-/* ---------- unlock (sub-steps) ---------- */
-.unlock-ring { position: relative; width: min(220px, 50vw); aspect-ratio: 1; display: grid; place-items: center; }
-.ring-svg { position: absolute; inset: 0; transform: rotate(-90deg); }
-.ring-bg { fill: none; stroke: var(--line); stroke-width: 1; }
-.ring-fg { fill: none; stroke: var(--ink); stroke-width: 1.5; transition: stroke .6s; }
-.big-lock { width: 38%; overflow: visible; }
-.big-lock path { fill: var(--ink); transition: fill .6s; }
-.phases { display: grid; margin-top: 36px; }
-.phase { grid-area: 1 / 1; pointer-events: none; }
-.phase > * { opacity: 0; transform: translateY(28px); transition: opacity .6s var(--ease), transform .7s var(--ease); }
-.phase.active > * { opacity: 1; transform: none; }
-.phase.active > *:nth-child(2) { transition-delay: .08s; }
-.phase.leaving > * { transform: translateY(-28px); }
-.phase h3 { font-size: clamp(44px, 6vw, 88px); line-height: 1; letter-spacing: -.05em; margin-bottom: 16px; font-weight: 700; }
-html[lang="zh-CN"] .phase h3 { letter-spacing: 0; font-weight: 900; }
-.phase p { font-size: 17px; max-width: 440px; margin-inline: auto; color: var(--ink-2); }
-.phase-dots { display: flex; gap: 8px; margin-top: 28px; }
-.phase-dots i { width: 22px; height: 2px; background: currentColor; opacity: .25; transition: all .5s var(--ease); }
-.phase-dots i.on { width: 44px; opacity: 1; }
 
 /* ---------- works ---------- */
 .works-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; width: min(940px, 100%); margin-top: 40px; text-align: left; }
@@ -347,8 +326,7 @@ a.work-frame:hover .frame-shot { transform: scale(1.03); }
 .dial.dragging { cursor: grabbing; }
 .dial-face { position: absolute; left: 0; top: 50%; width: var(--dial-h, 340px); height: var(--dial-h, 340px); transform: translateY(-50%); overflow: visible; }
 .dial-rim { fill: color-mix(in srgb, var(--bg) 70%, transparent); stroke: var(--line); stroke-width: 1; transition: fill .6s; }
-.dial-rotor { transform-origin: 180px 180px; transform-box: view-box; transition: transform .9s var(--ease-in-out); }
-.dial.dragging .dial-rotor { transition: none; }
+.dial-rotor { transform-origin: 180px 180px; transform-box: view-box; }
 .dial-tick { stroke: var(--ink); stroke-opacity: .2; stroke-width: 1; }
 .dial-notch { cursor: pointer; }
 .dial-notch line { stroke: var(--ink); stroke-opacity: .45; stroke-width: 1.5; }
@@ -409,7 +387,9 @@ body.lang-out [data-i18n]:not([data-split]) { opacity: 0; }
     content: ""; position: absolute; z-index: -1; left: 50%; bottom: 0; width: 100vw; height: 120px; transform: translateX(-50%);
     background: linear-gradient(to bottom, transparent, var(--bg) 65%); pointer-events: none;
   }
-  .scroll-cue { bottom: 130px; }
+  .scroll-cue { display: none; }
+  #top .page-inner { padding-bottom: 130px; }
+  #top .actions { flex-direction: column; gap: 20px; }
   .dial {
     height: 88px;
     -webkit-mask: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);

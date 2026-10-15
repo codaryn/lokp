@@ -31,12 +31,6 @@
       "sv.5d": "Seus dados organizados em indicadores claros, para decisões mais rápidas e assertivas.",
       "sv.6t": "Suporte contínuo",
       "sv.6d": "Manutenção, ajustes e evolução após a entrega, acompanhando o crescimento da sua empresa.",
-      "ul.1t": "Antes",
-      "ul.1d": "Planilhas manuais, retrabalho, sistemas desconectados e equipes dedicadas a tarefas repetitivas.",
-      "ul.2t": "Durante",
-      "ul.2d": "Mapeamos cada etapa, eliminamos atividades desnecessárias e automatizamos o restante.",
-      "ul.3t": "Depois",
-      "ul.3d": "Processos automatizados, dados consistentes e equipe focada no que gera valor para o negócio.",
       "wk.title": "Projetos",
       "wk.lead": "Soluções já entregues pela lokp. Novos projetos em desenvolvimento.",
       "wk.1d": "E-commerce de automação comercial e informática, com catálogo de produtos, carrinho e orçamento via WhatsApp. Projeto entregue e em operação.",
@@ -78,8 +72,10 @@
       "ft.top": "Voltar ao topo",
       "dl.home": "Início",
       "hero.scroll": "Role para explorar",
+      "hero.tag": "Software sob medida, automação e integração de sistemas para a sua empresa.",
+      "hero.cta": "Fale conosco",
+      "hero.more": "Conheça nossas soluções",
       "dl.services": "Soluções",
-      "dl.unlock": "Evolução",
       "dl.works": "Projetos",
       "dl.examples": "Casos",
       "dl.process": "Processo",
@@ -101,12 +97,6 @@
       "sv.5d": "把您已有的数据整理清楚，帮助更快做出决策。",
       "sv.6t": "持续支持",
       "sv.6d": "交付后的维护、调整与优化，让系统跟着企业一起成长。",
-      "ul.1t": "之前",
-      "ul.1d": "手工表格、反复返工、系统之间互不相通，团队被困在重复性任务中。",
-      "ul.2t": "过程中",
-      "ul.2d": "我们梳理每个环节，去掉不必要的步骤，把剩下的交给自动化。",
-      "ul.3t": "之后",
-      "ul.3d": "流程自动运转，数据准确一致，团队重新专注于业务本身。",
       "wk.title": "作品",
       "wk.lead": "lokp 已交付的项目，更多项目正在开发中。",
       "wk.1d": "商业自动化与电脑设备电商平台，包含产品目录、购物车与 WhatsApp 询价功能。项目已交付并稳定运行。",
@@ -148,8 +138,10 @@
       "ft.top": "返回顶部",
       "dl.home": "首页",
       "hero.scroll": "向下滑动",
+      "hero.tag": "为您的企业提供定制软件、流程自动化与系统集成。",
+      "hero.cta": "联系我们",
+      "hero.more": "了解我们的服务",
       "dl.services": "服务",
-      "dl.unlock": "解锁",
       "dl.works": "作品",
       "dl.examples": "场景",
       "dl.process": "流程",
@@ -234,9 +226,12 @@
   function runPreloader(done) {
     const pre = $("#preloader");
     const count = $("#preCount");
-    if (reduced) { pre.classList.add("gone"); document.body.classList.remove("loading"); done(); return; }
+    // only play the intro once per visit; returning to the page goes straight in
+    let seen = false;
+    try { seen = sessionStorage.getItem("lokp-intro") === "1"; sessionStorage.setItem("lokp-intro", "1"); } catch (_) {}
+    if (reduced || seen) { pre.classList.add("gone"); document.body.classList.remove("loading"); done(); return; }
     const start = performance.now();
-    const dur = 1500;
+    const dur = 900;
     (function step(now) {
       const p = clamp((now - start) / dur);
       count.textContent = String(Math.round(easeOut(p) * 100)).padStart(3, "0");
@@ -247,7 +242,7 @@
         document.body.classList.remove("loading");
         done();
         setTimeout(() => pre.classList.add("gone"), 1200);
-      }, 600);
+      }, 350);
     })(start);
   }
 
@@ -284,63 +279,32 @@
   }
 
   /* ---------------------------------------------------------
-     Unlock page: lock opens across its three sub-steps
-  --------------------------------------------------------- */
-  const unlockScene = (() => {
-    const shackle = $("#bigShackle"), bL = $("#bigL"), bR = $("#bigR"), ring = $("#ringFg");
-    const phases = $$("#unlock .phase"), dots = $$("#unlock .phase-dots i");
-    const RING = 2 * Math.PI * 92;
-    const easeInOut = (v) => (v < 0.5 ? 4 * v * v * v : 1 - Math.pow(-2 * v + 2, 3) / 2);
-    ring.style.strokeDasharray = RING;
-    let p = 0, raf = 0;
-
-    function draw(v) {
-      const lift = clamp((v - 0.2) / 0.45), swing = clamp((v - 0.55) / 0.3);
-      shackle.setAttribute("transform", `translate(0 ${-easeOut(lift) * 48}) rotate(${-easeOut(swing) * 32} 27 132)`);
-      const split = easeOut(clamp((v - 0.6) / 0.3)) * 10;
-      bL.setAttribute("transform", `translate(${-split} ${split * 0.4})`);
-      bR.setAttribute("transform", `translate(${split} ${-split * 0.2})`);
-      ring.style.strokeDashoffset = RING * (1 - Math.max(v, 0.04));
-    }
-    draw(0);
-
-    return function to(step) {
-      phases.forEach((el, i) => { el.classList.toggle("leaving", i < step); el.classList.toggle("active", i === step); });
-      dots.forEach((d, i) => d.classList.toggle("on", i === step));
-      const from = p, target = step / 2, t0 = performance.now(), dur = reduced ? 1 : 1100;
-      cancelAnimationFrame(raf);
-      (function tick(now) {
-        const k = clamp((now - t0) / dur);
-        p = from + (target - from) * easeInOut(k);
-        draw(p);
-        if (k < 1) raf = requestAnimationFrame(tick);
-      })(t0);
-    };
-  })();
-
-  /* ---------------------------------------------------------
-     Deck: pages slide sideways, the dial turns between them
-     and crossfades the stage background
+     Deck: one continuous position drives everything. The track,
+     the dial and the background all follow it frame by frame;
+     input moves a target and the position glides after it.
   --------------------------------------------------------- */
   const deck = (() => {
     const track = $("#track"), pages = $$(".page", track), stage = $("#stageBg");
+    const inners = pages.map((p) => $(".page-inner", p));
     const dial = $("#dial"), rotor = $("#dialRotor"), prevBtn = $("#prevBtn"), nextBtn = $("#nextBtn");
     const N = pages.length, STEP = 360 / N, NS = "http://www.w3.org/2000/svg";
     const pad = (v) => String(v).padStart(2, "0");
-    const list = (p, k) => (p.dataset[k] || "").split(",");
-    const at = (arr, s) => arr[Math.min(s, arr.length - 1)];
-    const stepsOf = (p) => +(p.dataset.steps || 1);
     const svg = (tag, attrs) => {
       const el = document.createElementNS(NS, tag);
       for (const k in attrs) el.setAttribute(k, attrs[k]);
       return el;
     };
-    let idx = 0, sub = 0, busy = false, started = false;
-    let dragStart = null, dragMoved = false;
+    const clampPos = (v) => clamp(v, 0, N - 1);
+
+    let pos = 0, target = 0, idx = -1, raf = 0, last = 0, started = false;
+    let holding = false; // finger / dial drag: position tracks input 1:1
+    const shown = pages.map(() => false);
 
     // one background layer per distinct data-bg key
     const layers = {};
-    pages.forEach((p) => list(p, "bg").forEach((key) => {
+    pages.forEach((p) => {
+      const key = p.dataset.bg;
+      p.classList.toggle("is-dark", p.dataset.theme === "dark");
       if (!key || layers[key]) return;
       const d = document.createElement("div");
       d.className = "bg-layer";
@@ -351,7 +315,7 @@
       } else d.classList.add(`bg-${key}`);
       stage.appendChild(d);
       layers[key] = d;
-    }));
+    });
     $$("[data-shot]").forEach((el) => loadShot(el.dataset.shot, el.dataset.live, (u) => (el.style.backgroundImage = `url("${u}")`)));
 
     // dial: fine ticks + one labelled notch per page, laid out from 12 o'clock.
@@ -359,14 +323,15 @@
     // and labels are pre-rotated 90deg so they read horizontally there.
     // Bottom wheel (phones): the active notch stays at 12 o'clock, labels upright.
     const bottomMQ = matchMedia("(max-width: 560px)");
-    const rotation = (i) => (bottomMQ.matches ? 0 : -90) - i * STEP;
+    const rotation = (v) => (bottomMQ.matches ? 0 : -90) - v * STEP;
     for (let a = 0; a < 360; a += 4) rotor.appendChild(svg("line", { x1: 180, y1: 4, x2: 180, y2: 10, class: "dial-tick", transform: `rotate(${a} 180 180)` }));
+    let dialDragged = false;
     const notches = pages.map((p, i) => {
       const g = svg("g", { class: "dial-notch", transform: `rotate(${i * STEP} 180 180)` });
       g.appendChild(svg("rect", { x: 168, y: 0, width: 24, height: 96 }));
       g.appendChild(svg("line", { x1: 180, y1: 4, x2: 180, y2: 18 }));
       g.appendChild(svg("text", { x: 180 }));
-      g.addEventListener("click", () => { if (!dragMoved) go(i); });
+      g.addEventListener("click", () => { if (!dialDragged) go(i); });
       rotor.appendChild(g);
       return g;
     });
@@ -377,7 +342,7 @@
       else { text.setAttribute("y", 26); text.setAttribute("transform", "rotate(90 180 26)"); }
     });
     orientDial();
-    bottomMQ.addEventListener("change", () => { orientDial(); render(); });
+    bottomMQ.addEventListener("change", () => { orientDial(); paint(); });
     onLangChange.push(labelDial);
     $("#dialTotal").textContent = pad(N);
 
@@ -385,65 +350,93 @@
     pages.forEach((p) => $$(".reveal", p).forEach((el, i) => el.style.setProperty("--rd", `${120 + i * 70}ms`)));
     const animated = (p) => $$(".reveal, [data-split], .step, .hero-mark", p);
 
-    function render() {
-      track.style.setProperty("--i", idx);
+    /* ---------- painting ---------- */
+    function paint() {
+      track.style.transform = `translate3d(${-pos * 100}%, 0, 0)`;
+      rotor.style.transform = `rotate(${rotation(pos)}deg)`;
+
+      const weight = {};
       pages.forEach((p, i) => {
-        const s = i < idx ? stepsOf(p) - 1 : i > idx ? 0 : sub;
-        p.classList.toggle("is-dark", at(list(p, "theme"), s) === "dark");
-        p.classList.toggle("active", i === idx);
-        p.inert = i !== idx;
+        const d = i - pos, a = Math.min(Math.abs(d), 1);
+        // content lags slightly behind its page and eases in as it centres
+        if (a < 1) {
+          inners[i].style.transform = `translate3d(${-d * 28}%, 0, 0) scale(${1 - a * 0.06})`;
+          inners[i].style.opacity = 1 - a * 0.85;
+          weight[p.dataset.bg] = (weight[p.dataset.bg] || 0) + (1 - a);
+        }
+        // entrance animations start as the page slides in, and replay next visit
+        if (started && !shown[i] && a < 0.6) { shown[i] = true; animated(p).forEach((el) => el.classList.add("in")); }
+        if (shown[i] && a >= 1) { shown[i] = false; p.scrollTop = 0; animated(p).forEach((el) => el.classList.remove("in")); }
       });
-      const p = pages[idx];
-      const bgKey = at(list(p, "bg"), sub);
-      for (const k in layers) layers[k].classList.toggle("on", k === bgKey);
-      document.body.classList.toggle("theme-dark", at(list(p, "theme"), sub) === "dark");
-      rotor.style.transform = `rotate(${rotation(idx)}deg)`;
-      notches.forEach((g, i) => g.classList.toggle("on", i === idx));
-      $("#dialNum").textContent = pad(idx + 1);
-      prevBtn.disabled = idx === 0 && sub === 0;
-      nextBtn.disabled = idx === N - 1;
-      if (p.id === "unlock") unlockScene(sub);
-      if (started) animated(p).forEach((el) => el.classList.add("in"));
-      try { history.replaceState(null, "", `#${p.id}`); } catch (_) {}
+      for (const k in layers) layers[k].style.opacity = Math.min(weight[k] || 0, 1);
+
+      const near = Math.round(pos);
+      if (near !== idx) {
+        idx = near;
+        const p = pages[idx];
+        pages.forEach((q, i) => { q.classList.toggle("active", i === idx); q.inert = i !== idx; });
+        notches.forEach((g, i) => g.classList.toggle("on", i === idx));
+        document.body.classList.toggle("theme-dark", p.dataset.theme === "dark");
+        $("#dialNum").textContent = pad(idx + 1);
+        try { history.replaceState(null, "", `#${p.id}`); } catch (_) {}
+      }
+      prevBtn.disabled = target <= 0;
+      nextBtn.disabled = target >= N - 1;
     }
 
-    function lock(ms) { busy = true; clearTimeout(lock.t); lock.t = setTimeout(() => (busy = false), ms); }
+    function frame(now) {
+      const dt = Math.min(now - last, 64);
+      last = now;
+      // frame-rate independent exponential glide
+      const k = holding || reduced ? 1 : 1 - Math.pow(0.9, dt / 16.67);
+      pos += (target - pos) * k;
+      if (Math.abs(target - pos) < 0.0005) pos = target;
+      paint();
+      raf = pos !== target ? requestAnimationFrame(frame) : 0;
+    }
+    function kick() {
+      if (raf) return;
+      last = performance.now();
+      raf = requestAnimationFrame(frame);
+    }
 
-    function go(i, s = 0) {
-      i = Math.max(0, Math.min(N - 1, i));
-      if (i === idx && s === sub) return render();
-      const old = pages[idx];
-      idx = i; sub = s;
-      lock(950);
-      pages[idx].scrollTop = 0;
-      render();
-      // replay animations next time the old page comes back
-      if (old !== pages[idx]) setTimeout(() => { if (old !== pages[idx]) animated(old).forEach((el) => el.classList.remove("in")); }, 1000);
-    }
-    function next() {
-      if (sub < stepsOf(pages[idx]) - 1) { sub++; lock(750); render(); }
-      else if (idx < N - 1) go(idx + 1, 0);
-    }
-    function prev() {
-      if (sub > 0) { sub--; lock(750); render(); }
-      else if (idx > 0) go(idx - 1, stepsOf(pages[idx - 1]) - 1);
-    }
+    function setTarget(v) { target = clampPos(v); kick(); }
+    function go(i) { gesture = null; setTarget(Math.round(i)); }
+    const next = () => go(Math.round(target) + 1);
+    const prev = () => go(Math.round(target) - 1);
 
     // a page with more content than the screen scrolls natively first
     const canScroll = (el, dir) => (dir > 0 ? el.scrollTop + el.clientHeight < el.scrollHeight - 2 : el.scrollTop > 2);
 
-    // wheel: one page per gesture (ignore trackpad inertia tails)
-    let lastWheel = 0;
+    /* ---------- continuous gestures ----------
+       A gesture starts on a page (base), drags the deck up to one page
+       either way, and on release settles on the page it leaned towards. */
+    let gesture = null, snapT = 0;
+    function lean(offset) {
+      return gesture.base + (Math.abs(offset) > 0.12 ? Math.sign(offset) : 0);
+    }
+    function release(velocity = 0) {
+      if (!gesture) return;
+      const offset = target - gesture.base;
+      const dest = Math.abs(velocity) > 0.0006 ? gesture.base + Math.sign(velocity) : lean(offset);
+      gesture = null;
+      holding = false;
+      setTarget(dest);
+    }
+
+    // wheel / trackpad: the deck follows the scroll, then glides to the nearest page
     addEventListener("wheel", (e) => {
       if (document.body.classList.contains("loading")) return e.preventDefault();
       const vertical = Math.abs(e.deltaY) >= Math.abs(e.deltaX);
-      const d = vertical ? e.deltaY : e.deltaX;
-      if (vertical && canScroll(pages[idx], Math.sign(d))) return;
+      let d = vertical ? e.deltaY : e.deltaX;
+      if (e.deltaMode === 1) d *= 16; else if (e.deltaMode === 2) d *= innerHeight;
+      if (!gesture && vertical && canScroll(pages[Math.round(target)], Math.sign(d))) return;
       e.preventDefault();
-      const now = performance.now(), gap = now - lastWheel;
-      lastWheel = now;
-      if (busy || gap < 160 || Math.abs(d) < 4) return;
-      d > 0 ? next() : prev();
+      if (!gesture) gesture = { base: Math.round(target) };
+      const step = clamp(d / Math.max(innerHeight, 600), -0.35, 0.35);
+      setTarget(clamp(target + step, gesture.base - 1, gesture.base + 1));
+      clearTimeout(snapT);
+      snapT = setTimeout(() => release(), 160);
     }, { passive: false });
 
     addEventListener("keydown", (e) => {
@@ -454,53 +447,64 @@
       const back = ["ArrowLeft", "ArrowUp", "PageUp"].includes(e.key);
       if (e.key === "Home") { e.preventDefault(); go(0); }
       else if (e.key === "End") { e.preventDefault(); go(N - 1); }
-      else if (fwd || back) { e.preventDefault(); if (!busy) fwd ? next() : prev(); }
+      else if (fwd || back) { e.preventDefault(); fwd ? next() : prev(); }
     });
 
     // hero scroll cue: click advances like a scroll
-    document.getElementById("scrollCue")?.addEventListener("click", () => { if (!busy) next(); });
+    document.getElementById("scrollCue")?.addEventListener("click", next);
 
-    // touch: horizontal swipe pages; vertical swipe pages once the page can't scroll further
-    let tx = null, ty = 0, atTop = false, atBottom = false;
+    // touch: horizontal swipes drag the deck under the finger;
+    // vertical swipes turn the page once the page can't scroll further
+    let touch = null;
     addEventListener("touchstart", (e) => {
       if (e.target.closest(".dial")) return;
-      tx = e.touches[0].clientX; ty = e.touches[0].clientY;
-      atTop = !canScroll(pages[idx], -1); atBottom = !canScroll(pages[idx], 1);
+      const p = e.touches[0];
+      touch = { x: p.clientX, y: p.clientY, t: performance.now(), axis: null,
+        atTop: !canScroll(pages[idx], -1), atBottom: !canScroll(pages[idx], 1) };
+    }, { passive: true });
+    addEventListener("touchmove", (e) => {
+      if (!touch) return;
+      const p = e.touches[0], dx = p.clientX - touch.x, dy = p.clientY - touch.y;
+      if (!touch.axis && Math.hypot(dx, dy) > 8) touch.axis = Math.abs(dx) > Math.abs(dy) * 1.2 ? "x" : "y";
+      if (touch.axis !== "x") return;
+      if (!gesture) { gesture = { base: Math.round(target) }; holding = true; }
+      setTarget(clamp(gesture.base - dx / innerWidth, gesture.base - 1, gesture.base + 1));
     }, { passive: true });
     addEventListener("touchend", (e) => {
-      if (tx == null) return;
-      const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
-      tx = null;
-      if (busy) return;
-      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.2) dx < 0 ? next() : prev();
+      if (!touch) return;
+      const p = e.changedTouches[0], dx = p.clientX - touch.x, dy = p.clientY - touch.y;
+      const { axis, atTop, atBottom } = touch, dt = Math.max(performance.now() - touch.t, 1);
+      touch = null;
+      if (axis === "x") release(-dx / innerWidth / dt * (dt < 300 ? 1 : 0));
       else if (dy < -70 && atBottom) next();
       else if (dy > 70 && atTop) prev();
     }, { passive: true });
+    addEventListener("touchcancel", () => { touch = null; release(); }, { passive: true });
 
-    // dial: drag it up/down to spin, release snaps to the nearest page
+    // dial: drag it to spin the deck, release settles on the nearest page
     // side wheel: dragging down brings the next page; bottom wheel: dragging left does
     const DRAG = 0.3; // degrees per pixel
-    const dragDelta = (e) => (bottomMQ.matches ? dragStart.x - e.clientX : e.clientY - dragStart.y);
-    dial.addEventListener("pointerdown", (e) => { dragStart = { x: e.clientX, y: e.clientY }; dragMoved = false; });
+    let dialStart = null;
+    const dialDelta = (e) => (bottomMQ.matches ? dialStart.x - e.clientX : e.clientY - dialStart.y);
+    dial.addEventListener("pointerdown", (e) => { dialStart = { x: e.clientX, y: e.clientY, base: target }; dialDragged = false; });
     addEventListener("pointermove", (e) => {
-      if (!dragStart) return;
-      const d = dragDelta(e);
-      if (!dragMoved && Math.abs(d) > 6) { dragMoved = true; dial.classList.add("dragging"); }
-      if (dragMoved) rotor.style.transform = `rotate(${rotation(idx) - d * DRAG}deg)`;
+      if (!dialStart) return;
+      const d = dialDelta(e);
+      if (!dialDragged && Math.abs(d) > 6) { dialDragged = true; dial.classList.add("dragging"); holding = true; gesture = null; }
+      if (dialDragged) setTarget(dialStart.base + (d * DRAG) / STEP);
     });
-    addEventListener("pointerup", (e) => {
-      if (!dragStart) return;
-      const d = dragDelta(e);
-      dragStart = null;
+    addEventListener("pointerup", () => {
+      if (!dialStart) return;
+      dialStart = null;
       dial.classList.remove("dragging");
-      if (dragMoved) go(idx + Math.round((d * DRAG) / STEP));
-      setTimeout(() => (dragMoved = false), 0);
+      if (dialDragged) { holding = false; go(target); }
+      setTimeout(() => (dialDragged = false), 0);
     });
 
     prevBtn.addEventListener("click", prev);
     nextBtn.addEventListener("click", next);
 
-    // in-page anchors jump to their page
+    // in-page anchors glide to their page
     document.addEventListener("click", (e) => {
       const a = e.target.closest('a[href^="#"]');
       if (!a) return;
@@ -510,20 +514,15 @@
       go(i);
     });
 
-    // keep the slide aligned while resizing
-    addEventListener("resize", () => {
-      track.style.transition = "none";
-      render();
-      requestAnimationFrame(() => (track.style.transition = ""));
-    });
+    addEventListener("resize", paint);
 
     return {
       init() {
-        idx = Math.max(0, pages.findIndex((p) => `#${p.id}` === location.hash));
+        pos = target = Math.max(0, pages.findIndex((p) => `#${p.id}` === location.hash));
         labelDial();
-        render();
+        paint();
       },
-      start() { started = true; render(); },
+      start() { started = true; paint(); },
     };
   })();
 
