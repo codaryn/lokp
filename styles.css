@@ -4,6 +4,19 @@
    AA contrast, visible focus, reduced-motion aware.
    ========================================================= */
 
+/* Plus Jakarta Sans hospedada aqui (SIL OFL 1.1, assets/fonts/OFL.txt): sem Google Fonts,
+   o IP do visitante não vai para terceiros. Chinês usa a fonte do sistema. */
+@font-face {
+  font-family: "Plus Jakarta Sans"; font-style: normal; font-weight: 200 800; font-display: swap;
+  src: url("assets/fonts/plus-jakarta-sans-latin-wght.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Plus Jakarta Sans"; font-style: normal; font-weight: 200 800; font-display: swap;
+  src: url("assets/fonts/plus-jakarta-sans-latin-ext-wght.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
 :root {
   --bg: #ececec;
   --bg-alt: #e3e3e3;
@@ -19,7 +32,8 @@
   --on-dark: #f5f5f5;
   --ease: cubic-bezier(.22, 1, .36, 1);
   --ease-in-out: cubic-bezier(.76, 0, .24, 1);
-  --font: "Plus Jakarta Sans", "Noto Sans SC", system-ui, -apple-system, sans-serif;
+  --cjk: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "Noto Sans SC";
+  --font: "Plus Jakarta Sans", var(--cjk), system-ui, -apple-system, sans-serif;
   --header-h: 76px;
 }
 /* dark sections: same components, inverted tokens */
@@ -35,7 +49,7 @@
   --sh-l: rgba(255, 255, 255, .07);
   --btn-hover: #d4d4d4;
 }
-html[lang="zh-CN"] { --font: "Noto Sans SC", "Plus Jakarta Sans", system-ui, sans-serif; }
+html[lang="zh-CN"] { --font: var(--cjk), "Plus Jakarta Sans", system-ui, sans-serif; }
 
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; padding: 0; }
@@ -190,6 +204,11 @@ html[lang="zh-CN"] .section-title { letter-spacing: 0; line-height: 1.2; font-we
     linear-gradient(0deg, rgba(17, 17, 17, .55), rgba(17, 17, 17, 0) 30%);
 }
 .hero-content { padding: 96px 0 150px; }
+/* a foto é ilustração (não é uma sede real): o aviso fica visível sobre ela */
+.hero-ilustr {
+  position: absolute; z-index: 1; right: 16px; top: 16px; padding: 4px 10px; border-radius: 999px;
+  background: rgba(17, 17, 17, .78); color: #f2f2f2; font-size: .75rem; font-weight: 600; letter-spacing: .02em;
+}
 .hero-content > * { max-width: min(560px, 46%); }
 @media (max-width: 1080px) { .hero-content > * { max-width: 50%; } .hero-title { font-size: clamp(2.25rem, 5vw, 3.5rem); } }
 .hero .eyebrow { color: #cfcfcf; }
@@ -290,6 +309,7 @@ html[lang="zh-CN"] .hero-title { max-width: min(560px, 46%); font-size: clamp(2.
 .case-after .case-label { color: var(--ink); }
 .case-after p:last-child { font-size: 1.0625rem; font-weight: 600; letter-spacing: -.015em; line-height: 1.4; }
 @media (max-width: 760px) { .case { grid-template-columns: 1fr; gap: 14px; } }
+.case-note { width: min(940px, 100%); margin: 18px auto 0; font-size: .875rem; color: var(--muted); }
 
 /* ---------- process (dark) ---------- */
 .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
@@ -320,6 +340,7 @@ html[lang="zh-CN"] .hero-title { max-width: min(560px, 46%); font-size: clamp(2.
 .contact-list dt { font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .contact-list dd { margin-top: 2px; font-size: 1.0625rem; font-weight: 600; }
 .contact-list a { background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat; }
+.empresa-dados { margin-top: 22px; font-size: .8125rem; line-height: 1.5; color: var(--muted); }
 
 .form {
   display: grid; gap: 22px; padding: clamp(28px, 4vw, 44px); border-radius: 26px; background: var(--bg);
@@ -342,6 +363,12 @@ html[lang="zh-CN"] .hero-title { max-width: min(560px, 46%); font-size: clamp(2.
 .field-error:not(:empty) { display: flex; }
 .field-error:not(:empty)::before { content: "!"; display: grid; place-items: center; width: 16px; height: 16px; flex: none; border-radius: 50%; background: #b00020; color: #fff; font-size: .6875rem; font-weight: 800; }
 .form .btn { justify-self: start; margin-top: 4px; }
+/* aceite da Política de Privacidade */
+.field-check .check { display: flex; align-items: flex-start; gap: 10px; }
+.field-check input[type="checkbox"] { flex: none; width: 22px; height: 22px; margin-top: 1px; padding: 0; border: 0; box-shadow: none; accent-color: var(--ink); cursor: pointer; }
+.field-check label { font-weight: 500; line-height: 1.45; cursor: pointer; }
+.field-check [aria-invalid="true"] { outline: 2px solid #b00020; outline-offset: 2px; }
+.link-inline { text-decoration: underline; text-underline-offset: 3px; font-weight: 600; color: var(--ink); }
 .form-status { font-size: .9375rem; font-weight: 600; }
 .form-status:empty { display: none; }
 @media (max-width: 960px) { .contact { grid-template-columns: 1fr; } }
@@ -349,13 +376,15 @@ html[lang="zh-CN"] .hero-title { max-width: min(560px, 46%); font-size: clamp(2.
 
 /* ---------- footer ---------- */
 .footer { background: var(--bg); color: var(--muted); padding-top: 64px; font-size: .9375rem; }
-.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; gap: 36px; padding-bottom: 48px; }
 .footer-brand p { max-width: 30ch; margin-top: 16px; }
 .footer-title { margin-bottom: 16px; font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); }
 .footer-col ul { display: grid; gap: 10px; }
 .footer-col a { transition: color .3s; }
 .footer-col a:hover { color: var(--ink); }
 .footer-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0 28px; border-top: 1px solid var(--line); font-size: .8125rem; }
+.footer-razao { display: block; margin-top: 4px; font-size: .75rem; }
+@media (max-width: 1080px) { .footer-grid { grid-template-columns: 1fr 1fr 1fr; } .footer-brand { grid-column: 1 / -1; } }
 @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } .footer-brand { grid-column: 1 / -1; } }
 @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
 
@@ -374,3 +403,24 @@ html[lang="zh-CN"] .hero-title { max-width: min(560px, 46%); font-size: clamp(2.
   .lang::before { display: none; }
   .lang-btn[aria-pressed="true"] { outline: 2px solid Highlight; }
 }
+
+/* ---------- páginas legais (privacidade, termos, cookies, cancelamento) ---------- */
+.legal { padding: clamp(40px, 7vw, 88px) 0 clamp(56px, 8vw, 104px); }
+.legal .container { width: min(780px, 100% - 32px); }
+.legal h1 { font-size: clamp(2rem, 4.6vw, 3.25rem); letter-spacing: -.04em; line-height: 1.05; margin-bottom: 12px; }
+.legal .legal-meta { color: var(--muted); font-size: .9375rem; margin-bottom: 8px; }
+.legal .legal-zh { color: var(--muted); font-size: .875rem; margin-bottom: 32px; }
+.legal h2 { font-size: 1.375rem; letter-spacing: -.02em; line-height: 1.25; margin: 40px 0 12px; }
+.legal h3 { font-size: 1.0625rem; margin: 24px 0 8px; }
+.legal p, .legal li { color: var(--ink-2); }
+.legal p + p { margin-top: 12px; }
+.legal ul { list-style: disc; padding-left: 22px; display: grid; gap: 6px; margin: 10px 0; }
+.legal ol { list-style: decimal; padding-left: 22px; display: grid; gap: 6px; margin: 10px 0; }
+.legal a { text-decoration: underline; text-underline-offset: 3px; color: var(--ink); font-weight: 600; }
+.legal .quadro { margin: 16px 0; padding: 18px 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+.legal .quadro p { margin: 0; }
+.legal table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .9375rem; }
+.legal th, .legal td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); color: var(--ink-2); }
+.legal th { color: var(--ink); font-weight: 600; }
+.legal-tabela { overflow-x: auto; }
+.header-legal .header-inner { justify-content: space-between; }

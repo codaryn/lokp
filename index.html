@@ -10,9 +10,7 @@
   <meta property="og:description" content="Software sob medida, automação de processos e integração de sistemas para empresas.">
   <meta property="og:image" content="assets/sede.jpg">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 360'%3E%3Cpath fill='%23111' d='M5 132V125A115 115 0 0 1 235 125V132H190V125A70 70 0 0 0 50 125V132Z'/%3E%3Cpath fill='%23111' d='M5 145H63V265L188 353H45Q5 353 5 313Z'/%3E%3Cpath fill='%23111' d='M115 145H190Q235 145 235 190V338L115 254Z'/%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" type="image/webp" imagesrcset="assets/sede-640.webp 640w, assets/sede.webp 1145w" imagesizes="(min-width: 761px) 50vw, 100vw">
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add("js");</script>
@@ -70,10 +68,11 @@
         <source type="image/webp" srcset="assets/sede-640.webp 640w, assets/sede.webp 1145w" sizes="(min-width: 761px) 50vw, 100vw">
         <img src="assets/sede.jpg" srcset="assets/sede-640.jpg 640w, assets/sede.jpg 1145w" sizes="(min-width: 761px) 50vw, 100vw"
              width="1145" height="1374" fetchpriority="high"
-             alt="Sede da lokp: edifício de vidro escuro visto de baixo, com o logotipo e o nome LOKP no alto da fachada."
+             alt="Imagem ilustrativa: edifício de vidro escuro visto de baixo, com a marca LOKP no alto da fachada."
              data-i18n-alt="hero.alt">
       </picture>
       <div class="hero-shade" aria-hidden="true"></div>
+      <p class="hero-ilustr" data-i18n="hero.note">Imagem ilustrativa</p>
       <div class="container hero-content">
         <p class="eyebrow" data-i18n="hero.eyebrow">Software · Automação · Integração</p>
         <h1 id="hero-title" class="hero-title" data-i18n="hero.title">Tecnologia sob medida para a operação da sua empresa.</h1>
@@ -115,7 +114,7 @@
         <header class="section-head">
           <p class="eyebrow"><span class="eyebrow-n" aria-hidden="true">01</span> <span data-i18n="sv.eyebrow">Soluções</span></p>
           <h2 id="sv-title" class="section-title" data-i18n="sv.title">Nossas soluções</h2>
-          <p class="section-lead" data-i18n="sv.lead">Projetos de qualquer porte, desenvolvidos de acordo com os processos da sua empresa, sem pacotes genéricos.</p>
+          <p class="section-lead" data-i18n="sv.lead">Projetos desenvolvidos de acordo com os processos da sua empresa, sem pacotes genéricos.</p>
         </header>
         <ul class="card-grid">
           <li class="card reveal">
@@ -128,13 +127,13 @@
             <span class="card-n" aria-hidden="true">02</span>
             <svg class="card-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12a8 8 0 0 1-14.3 4.9M4 12a8 8 0 0 1 14.3-4.9"/><path d="M18.5 3v4.2h-4.2M5.5 21v-4.2h4.2"/><circle cx="12" cy="12" r="2.5"/></svg>
             <h3 data-i18n="sv.2t">Automação de processos</h3>
-            <p data-i18n="sv.2d">Robôs para tarefas repetitivas, como conferência, lançamento e envio de dados, com execução diária e confiável.</p>
+            <p data-i18n="sv.2d">Robôs para tarefas repetitivas, como conferência, lançamento e envio de dados, executados nos horários programados.</p>
           </li>
           <li class="card reveal">
             <span class="card-n" aria-hidden="true">03</span>
             <svg class="card-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5.5" cy="6" r="2.5"/><circle cx="18.5" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 6h8M6.8 8.2l3.9 7.6M17.2 8.2l-3.9 7.6"/></svg>
             <h3 data-i18n="sv.3t">Integração de sistemas</h3>
-            <p data-i18n="sv.3d">ERP, CRM, e-commerce, bancos e planilhas compartilhando dados automaticamente, sem intervenção manual.</p>
+            <p data-i18n="sv.3d">ERP, CRM, e-commerce, bancos e planilhas compartilhando dados automaticamente, com menos trabalho manual.</p>
           </li>
           <li class="card reveal">
             <span class="card-n" aria-hidden="true">04</span>
@@ -146,7 +145,7 @@
             <span class="card-n" aria-hidden="true">05</span>
             <svg class="card-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 20.5h17"/><path d="M6.5 17v-5M11 17V7M15.5 17v-7M20 17V4"/></svg>
             <h3 data-i18n="sv.5t">Dashboards e relatórios</h3>
-            <p data-i18n="sv.5d">Seus dados organizados em indicadores claros, para decisões mais rápidas e assertivas.</p>
+            <p data-i18n="sv.5d">Seus dados organizados em indicadores claros, para apoiar as decisões da sua empresa.</p>
           </li>
           <li class="card reveal">
             <span class="card-n" aria-hidden="true">06</span>
@@ -178,7 +177,7 @@
               <h3 id="wk-1" class="work-name">infotekbrasil.com</h3>
               <p data-i18n="wk.1d">E-commerce de automação comercial e informática, com catálogo de produtos, carrinho e orçamento via WhatsApp. Projeto entregue e em operação.</p>
               <a class="link-arrow link-light" href="https://infotekbrasil.com" target="_blank" rel="noopener">
-                <span data-i18n="wk.visit">Acessar site</span>
+                <span data-i18n="wk.visit">Acessar infotekbrasil.com</span>
                 <span class="sr-only" data-i18n="newTab">(abre em nova aba)</span>
                 <i aria-hidden="true">↗</i>
               </a>
@@ -222,13 +221,14 @@
           </li>
           <li class="case reveal">
             <div class="case-part"><p class="case-label" data-i18n="ex.before">Hoje</p><p data-i18n="ex.3a">Relatórios semanais consolidados manualmente a partir de cinco planilhas.</p></div>
-            <div class="case-part case-after"><p class="case-label" data-i18n="ex.after">Com a lokp</p><p data-i18n="ex.3b">Um dashboard sempre atualizado, sem trabalho manual.</p></div>
+            <div class="case-part case-after"><p class="case-label" data-i18n="ex.after">Com a lokp</p><p data-i18n="ex.3b">Um dashboard atualizado automaticamente.</p></div>
           </li>
           <li class="case reveal">
             <div class="case-part"><p class="case-label" data-i18n="ex.before">Hoje</p><p data-i18n="ex.4a">Clientes aguardando retorno para as mesmas dúvidas recorrentes.</p></div>
-            <div class="case-part case-after"><p class="case-label" data-i18n="ex.after">Com a lokp</p><p data-i18n="ex.4b">Dúvidas frequentes respondidas instantaneamente; a equipe se dedica aos casos que exigem atenção.</p></div>
+            <div class="case-part case-after"><p class="case-label" data-i18n="ex.after">Com a lokp</p><p data-i18n="ex.4b">Dúvidas frequentes respondidas automaticamente; a equipe se dedica aos casos que exigem atenção.</p></div>
           </li>
         </ul>
+        <p class="case-note" data-i18n="ex.note">Exemplos ilustrativos. O resultado de cada projeto depende do processo, dos sistemas envolvidos e do escopo contratado.</p>
       </div>
     </section>
 
@@ -243,7 +243,7 @@
           <li class="step reveal"><span class="step-n" aria-hidden="true">01</span><h3 data-i18n="pr.1t">Diagnóstico</h3><p data-i18n="pr.1d">Entendemos como o processo funciona na prática, e não apenas como está documentado.</p></li>
           <li class="step reveal"><span class="step-n" aria-hidden="true">02</span><h3 data-i18n="pr.2t">Proposta</h3><p data-i18n="pr.2d">Escopo, prazo e investimento formalizados. Quando necessário, validamos a solução com um protótipo antes do desenvolvimento.</p></li>
           <li class="step reveal"><span class="step-n" aria-hidden="true">03</span><h3 data-i18n="pr.3t">Desenvolvimento</h3><p data-i18n="pr.3d">Entregas incrementais: você valida ao longo do projeto e os ajustes acontecem antes da conclusão.</p></li>
-          <li class="step reveal"><span class="step-n" aria-hidden="true">04</span><h3 data-i18n="pr.4t">Implantação e suporte</h3><p data-i18n="pr.4d">Colocamos a solução em produção, capacitamos sua equipe e seguimos oferecendo suporte.</p></li>
+          <li class="step reveal"><span class="step-n" aria-hidden="true">04</span><h3 data-i18n="pr.4t">Implantação e suporte</h3><p data-i18n="pr.4d">Colocamos a solução em produção, capacitamos sua equipe e seguimos oferecendo suporte, conforme o contratado.</p></li>
         </ol>
       </div>
     </section>
@@ -261,10 +261,18 @@
               <dd><a href="mailto:lokptech@outlook.com">lokptech@outlook.com</a></dd>
             </div>
             <div>
+              <dt data-i18n="ct.phone">Telefone</dt>
+              <dd><a href="tel:+5541984684019">(41) 98468-4019</a></dd>
+            </div>
+            <div>
               <dt data-i18n="ct.langs">Idiomas de atendimento</dt>
               <dd data-i18n="ct.langsV">Português e chinês</dd>
             </div>
           </dl>
+          <p class="empresa-dados">
+            <span data-i18n="ct.company2">Lokptech Sistemas e Tecnologia</span><br>
+            66.767.874 CAIO YAO ZU ZHU · CNPJ 66.767.874/0001-87
+          </p>
         </div>
 
         <form class="form" id="contactForm" novalidate aria-describedby="formReq">
@@ -290,6 +298,14 @@
             <textarea id="f-msg" name="message" rows="5" required aria-describedby="h-msg e-msg"></textarea>
             <p class="field-hint" id="h-msg" data-i18n="ct.msgPh">Ex.: conferir nota fiscal e lançar no ERP.</p>
             <p class="field-error" id="e-msg" data-err="ct.errMsg"></p>
+          </div>
+          <div class="field field-check">
+            <div class="check">
+              <input id="f-consent" name="consent" type="checkbox" required aria-describedby="e-consent">
+              <label for="f-consent"><span data-i18n="ct.consent">Li a Política de Privacidade e concordo com o uso destes dados para a lokp responder ao meu contato.</span> <span class="req" aria-hidden="true">*</span></label>
+            </div>
+            <p class="field-hint"><a class="link-inline" href="privacidade.html" data-i18n="ct.consentLink">Ler a Política de Privacidade</a></p>
+            <p class="field-error" id="e-consent" data-err="ct.errConsent"></p>
           </div>
           <button type="submit" class="btn btn-dark btn-lg" data-i18n="ct.send">Enviar mensagem</button>
           <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
@@ -330,12 +346,23 @@
         <h2 class="footer-title" data-i18n="ft.contact">Contato</h2>
         <ul>
           <li><a href="mailto:lokptech@outlook.com">lokptech@outlook.com</a></li>
+          <li><a href="tel:+5541984684019">(41) 98468-4019</a></li>
           <li data-i18n="ct.langsV">Português e chinês</li>
         </ul>
       </div>
+      <nav class="footer-col" aria-labelledby="ft-legal">
+        <h2 id="ft-legal" class="footer-title" data-i18n="ft.legal">Legal</h2>
+        <ul>
+          <li><a href="privacidade.html" data-i18n="ft.privacy">Política de Privacidade</a></li>
+          <li><a href="termos.html" data-i18n="ft.terms">Termos de Uso</a></li>
+          <li><a href="cookies.html" data-i18n="ft.cookies">Política de Cookies</a></li>
+          <li><a href="cancelamento.html" data-i18n="ft.refund">Cancelamento e reembolso</a></li>
+        </ul>
+      </nav>
     </div>
     <div class="container footer-bottom">
-      <p>© <span id="year">2026</span> lokp. <span data-i18n="ft.rights">Todos os direitos reservados.</span></p>
+      <p>© <span id="year">2026</span> lokp. <span data-i18n="ft.rights">Todos os direitos reservados.</span>
+        <span class="footer-razao">Lokptech Sistemas e Tecnologia · 66.767.874 CAIO YAO ZU ZHU · CNPJ 66.767.874/0001-87</span></p>
       <a class="link-arrow link-light" href="#inicio">
         <span data-i18n="ft.top">Voltar ao topo</span>
         <i aria-hidden="true">↑</i>

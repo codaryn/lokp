@@ -37,7 +37,8 @@
       "hero.tag": "Software sob medida, automação de processos e integração de sistemas, do diagnóstico ao suporte contínuo.",
       "hero.cta": "Solicitar proposta",
       "hero.more": "Conheça as soluções",
-      "hero.alt": "Sede da lokp: edifício de vidro escuro visto de baixo, com o logotipo e o nome LOKP no alto da fachada.",
+      "hero.alt": "Imagem ilustrativa: edifício de vidro escuro visto de baixo, com a marca LOKP no alto da fachada.",
+      "hero.note": "Imagem ilustrativa",
 
       "hl.label": "Diferenciais",
       "hl.1t": "Projetos sob medida",
@@ -51,17 +52,17 @@
 
       "sv.eyebrow": "Soluções",
       "sv.title": "Nossas soluções",
-      "sv.lead": "Projetos de qualquer porte, desenvolvidos de acordo com os processos da sua empresa, sem pacotes genéricos.",
+      "sv.lead": "Projetos desenvolvidos de acordo com os processos da sua empresa, sem pacotes genéricos.",
       "sv.1t": "Software sob medida",
       "sv.1d": "Sistemas internos, portais e aplicativos alinhados à forma como sua empresa opera.",
       "sv.2t": "Automação de processos",
-      "sv.2d": "Robôs para tarefas repetitivas, como conferência, lançamento e envio de dados, com execução diária e confiável.",
+      "sv.2d": "Robôs para tarefas repetitivas, como conferência, lançamento e envio de dados, executados nos horários programados.",
       "sv.3t": "Integração de sistemas",
-      "sv.3d": "ERP, CRM, e-commerce, bancos e planilhas compartilhando dados automaticamente, sem intervenção manual.",
+      "sv.3d": "ERP, CRM, e-commerce, bancos e planilhas compartilhando dados automaticamente, com menos trabalho manual.",
       "sv.4t": "Inteligência artificial",
       "sv.4d": "Leitura de documentos, triagem de e-mails e atendimento ao cliente, com validação humana nas etapas críticas.",
       "sv.5t": "Dashboards e relatórios",
-      "sv.5d": "Seus dados organizados em indicadores claros, para decisões mais rápidas e assertivas.",
+      "sv.5d": "Seus dados organizados em indicadores claros, para apoiar as decisões da sua empresa.",
       "sv.6t": "Suporte contínuo",
       "sv.6d": "Manutenção, ajustes e evolução após a entrega, acompanhando o crescimento da sua empresa.",
 
@@ -75,9 +76,10 @@
       "ex.2a": "Pedidos do e-commerce lançados manualmente no ERP.",
       "ex.2b": "Pedidos integrados automaticamente ao ERP, com estoque sincronizado em todos os canais.",
       "ex.3a": "Relatórios semanais consolidados manualmente a partir de cinco planilhas.",
-      "ex.3b": "Um dashboard sempre atualizado, sem trabalho manual.",
+      "ex.3b": "Um dashboard atualizado automaticamente.",
       "ex.4a": "Clientes aguardando retorno para as mesmas dúvidas recorrentes.",
-      "ex.4b": "Dúvidas frequentes respondidas instantaneamente; a equipe se dedica aos casos que exigem atenção.",
+      "ex.4b": "Dúvidas frequentes respondidas automaticamente; a equipe se dedica aos casos que exigem atenção.",
+      "ex.note": "Exemplos ilustrativos. O resultado de cada projeto depende do processo, dos sistemas envolvidos e do escopo contratado.",
 
       "wk.eyebrow": "Projetos",
       "wk.title": "Projetos entregues",
@@ -85,7 +87,7 @@
       "wk.status": "Em operação",
       "wk.shotAlt": "Página inicial do site infotekbrasil.com",
       "wk.1d": "E-commerce de automação comercial e informática, com catálogo de produtos, carrinho e orçamento via WhatsApp. Projeto entregue e em operação.",
-      "wk.visit": "Acessar site",
+      "wk.visit": "Acessar infotekbrasil.com",
       "wk.soonBadge": "Em desenvolvimento",
       "wk.soon": "Em breve",
       "wk.soonD": "Projeto em desenvolvimento. O próximo pode ser o da sua empresa.",
@@ -100,7 +102,7 @@
       "pr.3t": "Desenvolvimento",
       "pr.3d": "Entregas incrementais: você valida ao longo do projeto e os ajustes acontecem antes da conclusão.",
       "pr.4t": "Implantação e suporte",
-      "pr.4d": "Colocamos a solução em produção, capacitamos sua equipe e seguimos oferecendo suporte.",
+      "pr.4d": "Colocamos a solução em produção, capacitamos sua equipe e seguimos oferecendo suporte, conforme o contratado.",
 
       "ct.eyebrow": "Contato",
       "ct.title": "Vamos conversar sobre o seu projeto.",
@@ -118,6 +120,11 @@
       "ct.errEmail": "Informe um e-mail válido, por exemplo nome@empresa.com.",
       "ct.errMsg": "Descreva brevemente como podemos ajudar.",
       "ct.errSummary": "Não foi possível enviar. Revise os campos destacados.",
+      "ct.phone": "Telefone",
+      "ct.company2": "Lokptech Sistemas e Tecnologia",
+      "ct.consent": "Li a Política de Privacidade e concordo com o uso destes dados para a lokp responder ao meu contato.",
+      "ct.consentLink": "Ler a Política de Privacidade",
+      "ct.errConsent": "Para enviar, marque que leu a Política de Privacidade.",
       "ct.sent": "Abrindo seu aplicativo de e-mail com a mensagem pronta. Se nada abrir, escreva para " + EMAIL + ".",
 
       "ft.tag": "Software sob medida, automação e integração de sistemas.",
@@ -126,6 +133,11 @@
       "ft.contact": "Contato",
       "ft.rights": "Todos os direitos reservados.",
       "ft.top": "Voltar ao topo",
+      "ft.legal": "Legal",
+      "ft.privacy": "Política de Privacidade",
+      "ft.terms": "Termos de Uso",
+      "ft.cookies": "Política de Cookies",
+      "ft.refund": "Cancelamento e reembolso",
     },
     zh: {
       "meta.title": "lokp · 定制软件、流程自动化与系统集成",
@@ -150,7 +162,8 @@
       "hero.tag": "从需求诊断到持续支持，提供定制软件、流程自动化与系统集成服务。",
       "hero.cta": "获取方案",
       "hero.more": "了解解决方案",
-      "hero.alt": "lokp 总部：仰视的深色玻璃大楼，外立面顶部是 LOKP 标志与名称。",
+      "hero.alt": "示意图：仰视的深色玻璃大楼，外立面顶部是 LOKP 标志。",
+      "hero.note": "示意图",
 
       "hl.label": "我们的优势",
       "hl.1t": "量身定制",
@@ -164,17 +177,17 @@
 
       "sv.eyebrow": "解决方案",
       "sv.title": "我们的解决方案",
-      "sv.lead": "无论项目大小，都按照您的流程从头开发，而不是套用现成的软件包。",
+      "sv.lead": "按照您的业务流程开发，而不是套用现成的软件包。",
       "sv.1t": "定制软件",
       "sv.1d": "内部系统、门户网站与应用程序，按照您公司的工作方式打造。",
       "sv.2t": "流程自动化",
-      "sv.2d": "让机器人处理重复工作：核对、录入、发送数据，每天准时可靠地运行。",
+      "sv.2d": "让机器人处理重复工作：核对、录入、发送数据，按计划时间运行。",
       "sv.3t": "系统集成",
-      "sv.3d": "ERP、CRM、电商平台、银行与表格之间自动交换数据，无需人工中转。",
+      "sv.3d": "ERP、CRM、电商平台、银行与表格之间自动交换数据，减少人工操作。",
       "sv.4t": "人工智能",
       "sv.4d": "文档识别、邮件分拣与客户服务，在关键环节保留人工审核。",
       "sv.5t": "数据看板与报表",
-      "sv.5d": "把您的数据整理成清晰的指标，帮助更快、更准确地决策。",
+      "sv.5d": "把您的数据整理成清晰的指标，为企业决策提供支持。",
       "sv.6t": "持续支持",
       "sv.6d": "交付后的维护、调整与优化，让系统跟着企业一起成长。",
 
@@ -188,9 +201,10 @@
       "ex.2a": "电商订单需要手动录入 ERP。",
       "ex.2b": "订单自动进入 ERP，各渠道库存同步更新。",
       "ex.3a": "每周报表要从五个表格里手动汇总。",
-      "ex.3b": "一个随时更新的数据看板，无需手动操作。",
+      "ex.3b": "一个自动更新的数据看板。",
       "ex.4a": "客户总在等待同样问题的回复。",
-      "ex.4b": "常见问题即时回复，团队专注处理真正需要关注的情况。",
+      "ex.4b": "常见问题自动回复，团队专注处理真正需要关注的情况。",
+      "ex.note": "以上为示例。每个项目的效果取决于具体流程、所涉及的系统以及合同约定的范围。",
 
       "wk.eyebrow": "项目案例",
       "wk.title": "已交付项目",
@@ -198,7 +212,7 @@
       "wk.status": "运行中",
       "wk.shotAlt": "infotekbrasil.com 网站首页",
       "wk.1d": "商业自动化与电脑设备电商平台，包含产品目录、购物车与 WhatsApp 询价功能。项目已交付并稳定运行。",
-      "wk.visit": "访问网站",
+      "wk.visit": "访问 infotekbrasil.com",
       "wk.soonBadge": "开发中",
       "wk.soon": "敬请期待",
       "wk.soonD": "项目开发中。下一个或许就是贵公司的项目。",
@@ -213,7 +227,7 @@
       "pr.3t": "开发",
       "pr.3d": "分阶段交付：您在过程中随时验证，问题在完成前就得到调整。",
       "pr.4t": "上线与支持",
-      "pr.4d": "部署上线、培训团队，并持续提供支持。",
+      "pr.4d": "部署上线、培训团队，并按合同约定持续提供支持。",
 
       "ct.eyebrow": "联系我们",
       "ct.title": "聊聊您的项目。",
@@ -231,6 +245,11 @@
       "ct.errEmail": "请填写有效的电子邮箱，例如 name@company.com。",
       "ct.errMsg": "请简要描述您的需求。",
       "ct.errSummary": "无法发送，请检查标出的字段。",
+      "ct.phone": "电话",
+      "ct.company2": "Lokptech Sistemas e Tecnologia",
+      "ct.consent": "我已阅读隐私政策，并同意 lokp 使用这些信息回复我的咨询。",
+      "ct.consentLink": "阅读隐私政策（葡萄牙语）",
+      "ct.errConsent": "发送前，请勾选已阅读隐私政策。",
       "ct.sent": "正在打开您的邮件应用，内容已填好。如果没有打开，请发送邮件至 " + EMAIL + "。",
 
       "ft.tag": "定制软件、流程自动化与系统集成。",
@@ -239,6 +258,11 @@
       "ft.contact": "联系方式",
       "ft.rights": "版权所有。",
       "ft.top": "返回顶部",
+      "ft.legal": "法律信息",
+      "ft.privacy": "隐私政策",
+      "ft.terms": "使用条款",
+      "ft.cookies": "Cookie 政策",
+      "ft.refund": "取消与退款",
     },
   };
 
@@ -357,6 +381,7 @@
     { el: $("#f-name"), err: $("#e-name"), ok: (v) => v.trim().length > 0 },
     { el: $("#f-email"), err: $("#e-email"), ok: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) },
     { el: $("#f-msg"), err: $("#e-msg"), ok: (v) => v.trim().length > 0 },
+    { el: $("#f-consent"), err: $("#e-consent"), ok: () => $("#f-consent").checked },
   ];
   const check = (f) => {
     const valid = f.ok(f.el.value);
@@ -365,6 +390,7 @@
     return valid;
   };
   fields.forEach((f) => {
+    if (f.el.type === "checkbox") { f.el.addEventListener("change", () => check(f)); return; }
     f.el.addEventListener("blur", () => { if (f.el.value || f.el.hasAttribute("aria-invalid")) check(f); });
     f.el.addEventListener("input", () => { if (f.el.getAttribute("aria-invalid") === "true") check(f); });
   });
